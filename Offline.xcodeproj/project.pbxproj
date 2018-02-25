@@ -49,6 +49,10 @@
 		E092AA491EBB296400695346 /* SAPOData.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E092AA421EBB296400695346 /* SAPOData.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E092AA4A1EBB296400695346 /* SAPOfflineOData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E092AA431EBB296400695346 /* SAPOfflineOData.framework */; };
 		E092AA4B1EBB296400695346 /* SAPOfflineOData.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E092AA431EBB296400695346 /* SAPOfflineOData.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F6F226082042EAD800A6D485 /* TaskDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F226072042EAD800A6D485 /* TaskDetailViewController.swift */; };
+		F6F2260A2042EAE200A6D485 /* TaskListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F226092042EAE200A6D485 /* TaskListViewController.swift */; };
+		F6F2260C2042EAF200A6D485 /* ProductListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F2260B2042EAF200A6D485 /* ProductListViewController.swift */; };
+		F6F2260E2042EAFB00A6D485 /* ProductDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F2260D2042EAFB00A6D485 /* ProductDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -127,6 +131,10 @@
 		E092AA411EBB296400695346 /* SAPFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SAPFoundation.framework; path = "Frameworks/Release-fat/SAPFoundation.framework"; sourceTree = "<group>"; };
 		E092AA421EBB296400695346 /* SAPOData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SAPOData.framework; path = "Frameworks/Release-fat/SAPOData.framework"; sourceTree = "<group>"; };
 		E092AA431EBB296400695346 /* SAPOfflineOData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SAPOfflineOData.framework; path = "Frameworks/Release-fat/SAPOfflineOData.framework"; sourceTree = "<group>"; };
+		F6F226072042EAD800A6D485 /* TaskDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDetailViewController.swift; sourceTree = "<group>"; };
+		F6F226092042EAE200A6D485 /* TaskListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListViewController.swift; sourceTree = "<group>"; };
+		F6F2260B2042EAF200A6D485 /* ProductListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListViewController.swift; sourceTree = "<group>"; };
+		F6F2260D2042EAFB00A6D485 /* ProductDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -186,6 +194,7 @@
 		6C4C991F1DF19CCD004970FF /* Offline */ = {
 			isa = PBXGroup;
 			children = (
+				F6F226062042EA2B00A6D485 /* ViewControllers */,
 				6C4C994E1DF19D45004970FF /* AppDelegate.swift */,
 				6C4C994F1DF19D45004970FF /* Assets.xcassets */,
 				6CF8D6FE1E8E839900049D1C /* Helper */,
@@ -276,6 +285,17 @@
 				E00FC0671F4EC32B00CC339A /* MyPrefixSupplier.swift */,
 			);
 			path = public;
+			sourceTree = "<group>";
+		};
+		F6F226062042EA2B00A6D485 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				F6F226072042EAD800A6D485 /* TaskDetailViewController.swift */,
+				F6F226092042EAE200A6D485 /* TaskListViewController.swift */,
+				F6F2260B2042EAF200A6D485 /* ProductListViewController.swift */,
+				F6F2260D2042EAFB00A6D485 /* ProductDetailViewController.swift */,
+			);
+			name = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -428,9 +448,11 @@
 				E00FC07D1F4EC33800CC339A /* MyServiceClassFactory.swift in Sources */,
 				E00FC06D1F4EC32B00CC339A /* MyPrefixPurchaseOrderItem.swift in Sources */,
 				E00FC06F1F4EC32B00CC339A /* MyPrefixCustomer.swift in Sources */,
+				F6F2260E2042EAFB00A6D485 /* ProductDetailViewController.swift in Sources */,
 				E00FC0731F4EC32B00CC339A /* MyPrefixSupplier.swift in Sources */,
 				E00FC0711F4EC32B00CC339A /* MyPrefixProductText.swift in Sources */,
 				6C4C99681DF19D45004970FF /* AppDelegate.swift in Sources */,
+				F6F2260C2042EAF200A6D485 /* ProductListViewController.swift in Sources */,
 				E00FC0771F4EC32B00CC339A /* MyPrefixSalesOrderItem.swift in Sources */,
 				6C481B6D202AFC06005DFAB7 /* HomeViewViewController.swift in Sources */,
 				6C4030F41E5D7FF100FD6F8F /* DetailTableViewController.swift in Sources */,
@@ -439,10 +461,12 @@
 				E00FC0701F4EC32B00CC339A /* MyServiceClass.swift in Sources */,
 				E00FC07F1F4EC33800CC339A /* MyServiceClassMetadataChanges.swift in Sources */,
 				E00FC0781F4EC32B00CC339A /* MyPrefixStock.swift in Sources */,
+				F6F226082042EAD800A6D485 /* TaskDetailViewController.swift in Sources */,
 				E00FC06E1F4EC32B00CC339A /* MyPrefixProduct.swift in Sources */,
 				E00FC0751F4EC32B00CC339A /* MyPrefixProductCategory.swift in Sources */,
 				6C4030F21E5D7FF100FD6F8F /* SalesOrderViewController.swift in Sources */,
 				6C4C996C1DF19D45004970FF /* Constants.swift in Sources */,
+				F6F2260A2042EAE200A6D485 /* TaskListViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

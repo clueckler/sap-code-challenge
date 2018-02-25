@@ -9,11 +9,15 @@
 import UIKit
 import SAPFiori
 
+protocol TaskDetailViewControllerDelegate: class {
+    func didCloseTask()
+}
+
 class TaskDetailViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var tableView: UITableView!
     
-    weak var delegate: TaskViewControllerDelegate?
+    weak var delegate: TaskDetailViewControllerDelegate?
     
     private var task: Task!
     
@@ -73,7 +77,7 @@ class TaskDetailViewController: UIViewController, UITableViewDelegate, UITableVi
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "SalesOrderCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "PartCell", for: indexPath)
         let singlePart = parts[indexPath.row]
         cell.textLabel?.text = singlePart.partID
         cell.detailTextLabel?.text = (singlePart.name + " - " + singlePart.categoryName)

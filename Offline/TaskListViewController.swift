@@ -116,6 +116,7 @@ extension TaskListViewController: UITableViewDataSource, UITableViewDelegate {
         
         let task = self.tasks[indexPath.row]
         cell.headlineText = task.taskID
+        cell.subheadlineText = task.lifeCycleStatusName
         
         return cell
     }

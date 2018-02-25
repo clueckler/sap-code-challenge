@@ -290,8 +290,8 @@
 		F6F226062042EA2B00A6D485 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				F6F226072042EAD800A6D485 /* TaskDetailViewController.swift */,
 				F6F226092042EAE200A6D485 /* TaskListViewController.swift */,
+				F6F226072042EAD800A6D485 /* TaskDetailViewController.swift */,
 				F6F2260B2042EAF200A6D485 /* ProductListViewController.swift */,
 				F6F2260D2042EAFB00A6D485 /* ProductDetailViewController.swift */,
 			);

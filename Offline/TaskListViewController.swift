@@ -20,6 +20,8 @@ class TaskListViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var mapView: MKMapView!
+    private let refreshControl = UIRefreshControl()
+
     var toolbar: FUIMapToolbar!
     
     var tasks = [Task]()
@@ -61,6 +63,9 @@ class TaskListViewController: UIViewController {
 
         self.loadDataForTableView()
         self.setupToolbar()
+        
+        tableView.refreshControl = refreshControl
+        refreshControl.addTarget(self, action: #selector(loadDataForTableView), for: .valueChanged)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -214,8 +219,9 @@ extension TaskListViewController: CLLocationManagerDelegate {
 // MARK: - Private methods
 extension TaskListViewController {
     
-    private func loadDataForTableView() {
+    @objc private func loadDataForTableView() {
         oDataModel.loadOpenTasks { [weak self] (tasks, error) in
+            self?.refreshControl.endRefreshing()
             self?.tasks = tasks
             self?.tableView.reloadData()
             

@@ -149,19 +149,19 @@ class HomeViewViewController: UIViewController, URLSessionTaskDelegate, UITableV
             }
         }
 
-        self.oDataModel!.loadProdcuts{ resultProducts, error in
+        self.oDataModel!.loadAllParts{ parts, error in
             
-            if error != nil {
-                // handle error in future version
-            }
-            if let tempProducts = resultProducts {
-                self.products = tempProducts
-            }
-            OperationQueue.main.addOperation {
-                self.HomeTableView.reloadData()
-                
-            }
-            self.hideActivityIndicator(self.activityIndicator)
+//            if error != nil {
+//                // handle error in future version
+//            }
+//            if let tempProducts = resultProducts {
+//                self.products = tempProducts
+//            }
+//            OperationQueue.main.addOperation {
+//                self.HomeTableView.reloadData()
+//
+//            }
+//            self.hideActivityIndicator(self.activityIndicator)
         }
     }
     /*

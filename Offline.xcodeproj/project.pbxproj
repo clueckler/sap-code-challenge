@@ -10,7 +10,6 @@
 		6C08B8791E68670F003DFB69 /* sap.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C08B8771E68670F003DFB69 /* sap.png */; };
 		6C08B87A1E68670F003DFB69 /* StartScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C08B8781E68670F003DFB69 /* StartScreenViewController.swift */; };
 		6C359BD11EAF7C2C007F34B6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6C359BD01EAF7C2C007F34B6 /* Main.storyboard */; };
-		6C4030F21E5D7FF100FD6F8F /* SalesOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C4030EF1E5D7FF100FD6F8F /* SalesOrderViewController.swift */; };
 		6C4030F41E5D7FF100FD6F8F /* DetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C4030F11E5D7FF100FD6F8F /* DetailTableViewController.swift */; };
 		6C4030F61E5D7FFB00FD6F8F /* EditableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C4030F51E5D7FFB00FD6F8F /* EditableCell.swift */; };
 		6C481B6D202AFC06005DFAB7 /* HomeViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C481B6C202AFC06005DFAB7 /* HomeViewViewController.swift */; };
@@ -98,7 +97,6 @@
 		6C08B8771E68670F003DFB69 /* sap.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sap.png; sourceTree = "<group>"; };
 		6C08B8781E68670F003DFB69 /* StartScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartScreenViewController.swift; sourceTree = "<group>"; };
 		6C359BD01EAF7C2C007F34B6 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		6C4030EF1E5D7FF100FD6F8F /* SalesOrderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SalesOrderViewController.swift; sourceTree = "<group>"; };
 		6C4030F11E5D7FF100FD6F8F /* DetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailTableViewController.swift; sourceTree = "<group>"; };
 		6C4030F51E5D7FFB00FD6F8F /* EditableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditableCell.swift; sourceTree = "<group>"; };
 		6C481B6C202AFC06005DFAB7 /* HomeViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewViewController.swift; sourceTree = "<group>"; };
@@ -241,7 +239,6 @@
 				6C08B8771E68670F003DFB69 /* sap.png */,
 				6C08B8781E68670F003DFB69 /* StartScreenViewController.swift */,
 				6C4030F51E5D7FFB00FD6F8F /* EditableCell.swift */,
-				6C4030EF1E5D7FF100FD6F8F /* SalesOrderViewController.swift */,
 				6C4030F11E5D7FF100FD6F8F /* DetailTableViewController.swift */,
 				6C481B6C202AFC06005DFAB7 /* HomeViewViewController.swift */,
 			);
@@ -480,7 +477,6 @@
 				F6F226082042EAD800A6D485 /* TaskDetailViewController.swift in Sources */,
 				E00FC06E1F4EC32B00CC339A /* MyPrefixProduct.swift in Sources */,
 				E00FC0751F4EC32B00CC339A /* MyPrefixProductCategory.swift in Sources */,
-				6C4030F21E5D7FF100FD6F8F /* SalesOrderViewController.swift in Sources */,
 				6C4C996C1DF19D45004970FF /* Constants.swift in Sources */,
 				F6F2260A2042EAE200A6D485 /* TaskListViewController.swift in Sources */,
 			);

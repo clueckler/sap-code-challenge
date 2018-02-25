@@ -165,11 +165,8 @@ class ODataModel {
             }
         }
     }
-    /// loads all sales orders and their items
-    ///
-    /// - Returns: list of sales orders
-    /// - Throws: error
-    func loadProdcuts(completionHandler: @escaping (_ result: [MyPrefixProduct]?, _ error: String?) -> Void) {
+
+    func loadAllParts(completionHandler: @escaping (_ result: [Part]?, _ error: String?) -> Void) {
         
         let query = DataQuery().orderBy(MyPrefixProduct.productID)
         if isOfflineStoreOpened {
@@ -179,7 +176,7 @@ class ODataModel {
                     completionHandler(nil, "Loading Products failed \(error.localizedDescription)")
                     return
                 }
-                completionHandler(products!, nil)
+                completionHandler(products?.map(Part.init), nil)
             }
         } else {
             espmOdataService.fetchProducts(matching: query) { products, error in
@@ -187,7 +184,7 @@ class ODataModel {
                     completionHandler(nil, "Loading Products failed \(error.localizedDescription)")
                     return
                 }
-                completionHandler(products!, nil)
+                completionHandler(products?.map(Part.init), nil)
             }
         }
     }

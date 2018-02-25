@@ -109,7 +109,7 @@ class TaskDetailViewController: UIViewController, UITableViewDelegate, UITableVi
         cell.substatusText = singlePart.supplierID
         
         let isPartAvailable = isAvailable(part: singlePart)
-        cell.substatusText = isPartAvailable ? "Available" : "Not available!"
+        cell.substatusText = isPartAvailable ? "In inventory" : "Not in inventory!"
         cell.substatusLabel.textColor = .preferredFioriColor(forStyle: isPartAvailable ? .positive : .negative)
         
         return cell

@@ -100,10 +100,11 @@ class Part {
         currencyCode = mapping.currencyCode ?? "EUR"
         supplierID = mapping.supplierID ?? "NA"
         longDescription = mapping.longDescription ?? ""
-        dimensionUnit = mapping.dimensionUnit ?? ""
-        height = mapping.dimensionHeight?.toString() ?? "0"
-        width = mapping.dimensionWidth?.toString() ?? "0"
-        depth = mapping.dimensionDepth?.toString() ?? "0"
+        dimensionUnit = mapping.dimensionUnit ?? "cm"
+
+        height = "\(mapping.dimensionHeight?.intValue() ?? 0)"
+        width = "\(mapping.dimensionWidth?.intValue() ?? 0)"
+        depth = "\(mapping.dimensionDepth?.intValue() ?? 0)"
         
         entity = mapping
     }

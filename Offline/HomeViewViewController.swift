@@ -134,7 +134,7 @@ class HomeViewViewController: UIViewController, URLSessionTaskDelegate, UITableV
             let equipment: MyPrefixProduct = products[indexPath.row]
             let sDetailControler = segue.destination as! DetailTableViewController
             sDetailControler.initialize(oDataModel: oDataModel!)
-            sDetailControler.loadSalesOrderItem(item: equipment)
+            sDetailControler.load(part: Part(mapping: equipment))
             
         }
         

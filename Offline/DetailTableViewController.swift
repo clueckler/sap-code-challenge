@@ -101,7 +101,7 @@ class DetailTableViewController: UIViewController, Notifier, URLSessionTaskDeleg
     /// loads the current salesorderItem
     ///
     /// - Parameter newItems: the current salesorderItem
-    func loadSalesOrderItem(item: MyPrefixProduct) {
-        detailItem = Part(mapping: item)
+    func load(part: Part) {
+        detailItem = part
     }
 }

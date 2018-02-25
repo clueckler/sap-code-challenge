@@ -22,7 +22,6 @@ class StartScreenViewController: UIViewController, SAPURLSessionDelegate {
     }
 
     var currentAuthenticationState = AuthenticationState.notYetStarted
-    var oDataModel: ODataModel?
     /// the variable in the AppDelegate holding the current active session to the HCP
     var urlSession: SAPURLSession? {
         didSet {
@@ -68,19 +67,6 @@ class StartScreenViewController: UIViewController, SAPURLSessionDelegate {
             break
         default:
             infoText.text = "Authentication in Progress"
-        }
-    }
-    /// Handler to prepare the segue
-    ///
-    /// - Parameters:
-    ///   - segue:
-    ///   - sender:
-    override func prepare(for segue: UIStoryboardSegue, sender _: Any?) {
-        if segue.identifier == "authenticationSuccessfull" {
-
-            let view = segue.destination as! UINavigationController
-            let activeView = view.topViewController as! HomeViewViewController
-            activeView.initialize(oDataModel: oDataModel!)
         }
     }
 }

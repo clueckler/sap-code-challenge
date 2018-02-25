@@ -9,7 +9,7 @@
 import UIKit
 import SAPFiori
 
-class TaskDetailViewController: UIViewController {
+class TaskDetailViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var tableView: UITableView!
     
@@ -82,6 +82,7 @@ class TaskDetailViewController: UIViewController {
     }
     
     func tableView(_: UITableView, didSelectRowAt _: IndexPath) {
+
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

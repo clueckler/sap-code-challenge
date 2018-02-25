@@ -22,7 +22,7 @@ class TaskListViewController: UIViewController {
     @IBOutlet weak var mapView: MKMapView!
     var toolbar: FUIMapToolbar!
     
-    var tasks = [DummyData]()
+    var tasks = [Task]()
     var locationManager: CLLocationManager?
     
     // MARK: Init
@@ -58,10 +58,26 @@ class TaskListViewController: UIViewController {
         self.mapView.register(TaskAnnotationView.self, forAnnotationViewWithReuseIdentifier: MKMapViewDefaultAnnotationViewReuseIdentifier)
 
         self.loadDataForTableView()
-        self.loadDataForMapView()
         self.setupToolbar()
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let indexPath = sender as! IndexPath
+        let order = tasks[indexPath.row]
+        let sOviewControler = segue.destination as! TaskDetailViewController
+        
+        sOviewControler.delegate = self
+        sOviewControler.initialize(oDataModel: oDataModel!)
+        sOviewControler.load(task: order)
+    }
+    
+}
 
+extension TaskListViewController: TaskViewControllerDelegate {
+    func didCloseTask() {
+        self.navigationController?.popToRootViewController(animated: true)
+        loadDataForTableView()
+    }
 }
 
 // MARK: - UITableViewDataSource, UITableViewDelegate
@@ -80,14 +96,14 @@ extension TaskListViewController: UITableViewDataSource, UITableViewDelegate {
                                                  for: indexPath) as! FUIObjectTableViewCell
         
         let task = self.tasks[indexPath.row]
-        cell.headlineText = task.title
+        cell.headlineText = task.taskID
         
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        
+        performSegue(withIdentifier: "taskDetailSegue", sender: indexPath)
     }
     
 }
@@ -116,15 +132,17 @@ extension TaskListViewController: CLLocationManagerDelegate {
 extension TaskListViewController {
     
     private func loadDataForTableView() {
-        var data = DummyData(title: "fakeData", coordinate: CLLocationCoordinate2D(latitude: 41.395815, longitude: 2.173050))
-        self.tasks.append(data)
-    }
-    
-    private func loadDataForMapView() {
-        let annotations = TaskAnnotation.wrap(self.tasks)
-        if annotations.count > 0 {
-            self.mapView.addAnnotations(annotations)
-            self.mapView.showAnnotations(annotations, animated: true)
+        oDataModel.loadOpenTasks { [weak self] (tasks, error) in
+            self?.tasks = tasks
+            self?.tableView.reloadData()
+            
+            let annotations = TaskAnnotation.wrap(tasks)
+            self?.mapView.removeAnnotations(self?.mapView.annotations ?? [])
+
+            if annotations.count > 0 {
+                self?.mapView.addAnnotations(annotations)
+                self?.mapView.showAnnotations(annotations, animated: true)
+            }
         }
     }
     
@@ -150,19 +168,19 @@ class TaskAnnotation: MKPointAnnotation {
     
     // MARK: Properties
     
-    let task: DummyData
+    let task: Task
     
     // MARK: Init
     
-    init(_ task: DummyData) {
+    init(_ task: Task) {
         self.task = task
         super.init()
         
-        self.title = task.title
-        self.coordinate = task.coordinate
+        self.title = task.taskID
+        self.coordinate = task.coordinates
     }
     
-    static func wrap(_ tasks: [DummyData]) -> [TaskAnnotation] {
+    static func wrap(_ tasks: [Task]) -> [TaskAnnotation] {
         var retVal = [TaskAnnotation]()
         for task in tasks {
             retVal.append(TaskAnnotation(task))

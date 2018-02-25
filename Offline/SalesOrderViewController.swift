@@ -96,7 +96,7 @@ class SalesOrderViewController: UIViewController, URLSessionTaskDelegate, UITabl
     ///   - indexPath:
     /// - Returns: fills the cells with the Sales order
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "SalesOrderCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "PartCell", for: indexPath)
         let singlePart = parts[indexPath.row]
         cell.textLabel?.text = singlePart.partID
         cell.detailTextLabel?.text = (singlePart.name + " - " + singlePart.categoryName)

@@ -29,7 +29,7 @@ class DetailTableViewController: UIViewController, Notifier, URLSessionTaskDeleg
             //        objectHeader.detailImageView.image = #imageLiteral(resourceName: "ProfilePic")
             
             objectHeader.headlineLabel.text = detailItem.name
-            objectHeader.subheadlineLabel.text = "\(detailItem.price!.toString()) \(String(describing: detailItem.currencyCode))"
+            objectHeader.subheadlineLabel.text = "\(detailItem.price!.toString()) \(detailItem.currencyCode ?? "EUR")"
             objectHeader.footnoteLabel.text = detailItem.categoryName
             objectHeader.descriptionLabel.text = detailItem.longDescription
             

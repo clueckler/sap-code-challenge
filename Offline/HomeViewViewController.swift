@@ -142,7 +142,7 @@ class HomeViewViewController: UIViewController, URLSessionTaskDelegate, UITableV
     }
     private func loadData() {
         oDataModel?.loadOpenTasks { tasks, _ in
-            self.salesOrders = tasks.map { $0.source }
+            self.salesOrders = tasks.map { $0.salesOrder }
             OperationQueue.main.addOperation {
                 self.HomeTableView.reloadData()
 

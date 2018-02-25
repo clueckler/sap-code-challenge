@@ -42,10 +42,17 @@ class ProductListViewController: UIViewController, UITableViewDelegate, UITableV
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "PartCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "partCell", for: indexPath) as! FUIObjectTableViewCell
+        
         let singlePart = parts[indexPath.row]
-        cell.textLabel?.text = singlePart.partID
+        cell.headlineText = singlePart.partID
+        cell.subheadlineText = singlePart.name
+        cell.footnoteText = singlePart.categoryName
+        cell.descriptionText = singlePart.longDescription
+        cell.statusText = singlePart.price
+        cell.accessoryType = .disclosureIndicator
         cell.detailTextLabel?.text = (singlePart.name + " - " + singlePart.categoryName)
+        cell.substatusText = singlePart.supplierID
         
         return cell
     }
@@ -72,6 +79,8 @@ class ProductListViewController: UIViewController, UITableViewDelegate, UITableV
             self?.parts = parts ?? []
             self?.tableView.reloadData()
         }
+        
+        tableView.register(FUIObjectTableViewCell.self, forCellReuseIdentifier: "partCell")
 
         // Do any additional setup after loading the view.
     }

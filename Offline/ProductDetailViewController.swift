@@ -21,13 +21,16 @@ class ProductDetailViewController: UIViewController, UITableViewDelegate, UITabl
         tableView.dataSource = self
 
         let objectHeader = FUIObjectHeader()
+        
+        self.title = part.name
             
-        objectHeader.headlineLabel.text = part.name
-        objectHeader.subheadlineLabel.text = "\(part.price) \(part.currencyCode)"
+        objectHeader.headlineLabel.text = part.partID
+        objectHeader.subheadlineLabel.text = part.name
         objectHeader.footnoteLabel.text = part.categoryName
         objectHeader.descriptionLabel.text = part.longDescription
+        objectHeader.substatusLabel.text = part.supplierID
         
-        objectHeader.statusLabel.text = part.supplierID
+        objectHeader.statusLabel.text = part.price
         tableView.tableHeaderView = objectHeader
     }
     

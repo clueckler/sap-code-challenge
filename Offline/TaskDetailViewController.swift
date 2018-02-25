@@ -31,6 +31,9 @@ class TaskDetailViewController: UIViewController, UITableViewDelegate, UITableVi
     /// delegate function from UIViewController
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "Task number \(task.taskID)"
+
+        tableView.register(FUIObjectTableViewCell.self, forCellReuseIdentifier: "partCell")
         automaticallyAdjustsScrollViewInsets = false
         
         // Do any additional setup after loading the view
@@ -47,7 +50,7 @@ class TaskDetailViewController: UIViewController, UITableViewDelegate, UITableVi
             
             objectHeader.headlineLabel.text = task.taskID
             objectHeader.bodyLabel.text = task.lifeCycleStatusName
-            objectHeader.descriptionLabel.text = "Make sure to wear a safety vest."
+            objectHeader.descriptionLabel.text = task.instructions
             objectHeader.statusLabel.text = "High"
             
             tableView.tableHeaderView = objectHeader
@@ -77,12 +80,28 @@ class TaskDetailViewController: UIViewController, UITableViewDelegate, UITableVi
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "PartCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "partCell", for: indexPath) as! FUIObjectTableViewCell
+        
         let singlePart = parts[indexPath.row]
-        cell.textLabel?.text = singlePart.partID
+        cell.headlineText = singlePart.partID
+        cell.subheadlineText = singlePart.name
+        cell.footnoteText = singlePart.categoryName
+        cell.descriptionText = singlePart.longDescription
+        cell.statusText = singlePart.price
+        cell.accessoryType = .disclosureIndicator
         cell.detailTextLabel?.text = (singlePart.name + " - " + singlePart.categoryName)
+        cell.substatusText = singlePart.supplierID
+        
+        let isPartAvailable = isAvailable(part: singlePart)
+        cell.substatusText = isPartAvailable ? "Available" : "Not available!"
+        cell.substatusLabel.textColor = .preferredFioriColor(forStyle: isPartAvailable ? .positive : .negative)
         
         return cell
+    }
+
+    
+    func isAvailable(part: Part) -> Bool {
+        return !["HT-1251", "HT-1111"].contains(part.partID)
     }
     
     func tableView(_: UITableView, didSelectRowAt indexPath: IndexPath) {

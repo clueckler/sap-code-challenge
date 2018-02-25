@@ -1,0 +1,19 @@
+*.xcuserdatad
+*.xcworkspace
+.DS_Store
+
+# Cocoapod specific
+*.lock
+Pods/*
+
+# fastlane specific
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots/**/*.png
+fastlane/screenshots/screenshots.html
+fastlane/test_output
+*.app.dSYM.zip
+*.ipa
+
+# SwiftLint config
+*.swiftlint.yml

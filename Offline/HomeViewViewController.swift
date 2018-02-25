@@ -8,8 +8,7 @@
 
 import UIKit
 
-class HomeViewViewController: UIViewController, URLSessionTaskDelegate, UITableViewDataSource, UITableViewDelegate, ActivityIndicator {
-    
+class HomeViewViewController: UIViewController, URLSessionTaskDelegate, UITableViewDataSource, UITableViewDelegate, ActivityIndicator, TaskViewControllerDelegate {
     
     @IBOutlet weak var HomeTableView: UITableView!
     private var oDataModel: ODataModel?
@@ -51,6 +50,12 @@ class HomeViewViewController: UIViewController, URLSessionTaskDelegate, UITableV
             }
         }
     }
+    
+    func didCloseTask() {
+        self.navigationController?.popToRootViewController(animated: true)
+        self.loadData()
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -118,9 +123,10 @@ class HomeViewViewController: UIViewController, URLSessionTaskDelegate, UITableV
             let indexPath = sender as! IndexPath
             let order: MyPrefixSalesOrderHeader = salesOrders[indexPath.row]
             let sOviewControler = segue.destination as! SalesOrderViewController
-            sOviewControler.initialize(oDataModel: oDataModel!)
-            sOviewControler.loadSalesOrderItems(newItem: order)
             
+            sOviewControler.delegate = self
+            sOviewControler.initialize(oDataModel: oDataModel!)
+            sOviewControler.load(task: Task(mapping: order))
         }
         if segue.identifier == "Equipment" {
             

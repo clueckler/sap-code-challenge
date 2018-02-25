@@ -24,6 +24,7 @@
 		6C4C996E1DF19D45004970FF /* ODataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C4C99541DF19D45004970FF /* ODataModel.swift */; };
 		6CF8D7001E8E843200049D1C /* Notifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF8D6FF1E8E843200049D1C /* Notifier.swift */; };
 		6CFA48E01E8934B000D36D9C /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CFA48DF1E8934B000D36D9C /* ActivityIndicator.swift */; };
+		BB67F42D2042ED3000207174 /* DomainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB67F42C2042ED3000207174 /* DomainModel.swift */; };
 		E00FC06D1F4EC32B00CC339A /* MyPrefixPurchaseOrderItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E00FC0611F4EC32B00CC339A /* MyPrefixPurchaseOrderItem.swift */; };
 		E00FC06E1F4EC32B00CC339A /* MyPrefixProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = E00FC0621F4EC32B00CC339A /* MyPrefixProduct.swift */; };
 		E00FC06F1F4EC32B00CC339A /* MyPrefixCustomer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E00FC0631F4EC32B00CC339A /* MyPrefixCustomer.swift */; };
@@ -110,6 +111,7 @@
 		6C4C99541DF19D45004970FF /* ODataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = ODataModel.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		6CF8D6FF1E8E843200049D1C /* Notifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notifier.swift; sourceTree = "<group>"; };
 		6CFA48DF1E8934B000D36D9C /* ActivityIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
+		BB67F42C2042ED3000207174 /* DomainModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DomainModel.swift; sourceTree = "<group>"; };
 		E00FC0611F4EC32B00CC339A /* MyPrefixPurchaseOrderItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPrefixPurchaseOrderItem.swift; sourceTree = "<group>"; };
 		E00FC0621F4EC32B00CC339A /* MyPrefixProduct.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPrefixProduct.swift; sourceTree = "<group>"; };
 		E00FC0631F4EC32B00CC339A /* MyPrefixCustomer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPrefixCustomer.swift; sourceTree = "<group>"; };
@@ -202,6 +204,7 @@
 				6C359BD01EAF7C2C007F34B6 /* Main.storyboard */,
 				6C4C99831DF19D65004970FF /* Model */,
 				6C4C99841DF19D89004970FF /* View */,
+				BB67F42C2042ED3000207174 /* DomainModel.swift */,
 			);
 			path = Offline;
 			sourceTree = "<group>";
@@ -437,6 +440,7 @@
 			files = (
 				E0873B2C202866C100813A75 /* MyServiceClassStaticResolver.swift in Sources */,
 				E00FC0761F4EC32B00CC339A /* MyServiceClassMetadata.swift in Sources */,
+				BB67F42D2042ED3000207174 /* DomainModel.swift in Sources */,
 				E00FC0801F4EC33800CC339A /* MyServiceClassMetadataText.swift in Sources */,
 				6C4C996E1DF19D45004970FF /* ODataModel.swift in Sources */,
 				E00FC07E1F4EC33800CC339A /* MyServiceClassMetadataParser.swift in Sources */,

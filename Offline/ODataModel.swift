@@ -196,9 +196,8 @@ class ODataModel {
     ///
     /// - Returns: list of products
     /// - Throws: error
-    func loadProdcutsForSalesOrder(salesOrder : MyPrefixSalesOrderHeader ,completionHandler: @escaping (_ result: [MyPrefixProduct]?, _ error: String?) -> Void) {
-        
-        let query = DataQuery().filter(MyPrefixSalesOrderHeader.salesOrderID.equal(salesOrder.salesOrderID!)).expand(MyPrefixSalesOrderHeader.items)
+    func loadParts(for task: Task , completionHandler: @escaping (_ result: [Part]?, _ error: String?) -> Void) {
+        let query = DataQuery().filter(MyPrefixSalesOrderHeader.salesOrderID.equal(task.taskID)).expand(MyPrefixSalesOrderHeader.items)
         
         if isOfflineStoreOpened {
             /// the same query as it was set up for the online use can be fired against the initialised the offline Odata Service
@@ -229,7 +228,7 @@ class ODataModel {
                         group.wait()
                     }
                 }
-                completionHandler(products, nil)
+                completionHandler(products.map(Part.init), nil)
             }
         } else {
             espmOdataService.fetchSalesOrderHeaders(matching: query) { salesOrders, error in
@@ -259,7 +258,7 @@ class ODataModel {
                         group.wait()
                     }
                 }
-                completionHandler(products, nil)
+                completionHandler(products.map(Part.init), nil)
             }
         }
     }
@@ -291,7 +290,9 @@ class ODataModel {
     ///   - currentQuantity: int of the new quantity
     ///   - currentSalesOrderItem: current sales order which is supposed to updated
     /// - Throws: error
-    func updateSalesOrderHeader(status: String, currentSalesOrder: MyPrefixSalesOrderHeader) throws {
+    func updateTask(status: String, task: Task) throws {
+        let currentSalesOrder = task.salesOrder
+
         let indexEndOfText = status.index(status.startIndex, offsetBy: 1)
         let substring = status[status.startIndex..<indexEndOfText]
 

@@ -10,7 +10,7 @@ import SAPFiori
 
 class DetailTableViewController: UIViewController, Notifier, URLSessionTaskDelegate, UITextFieldDelegate, UITableViewDataSource, UITableViewDelegate {
 
-    private var detailItem: MyPrefixProduct!
+    private var detailItem: Part!
     private var oDataModel: ODataModel?
 
     func initialize(oDataModel: ODataModel) {
@@ -29,7 +29,7 @@ class DetailTableViewController: UIViewController, Notifier, URLSessionTaskDeleg
             //        objectHeader.detailImageView.image = #imageLiteral(resourceName: "ProfilePic")
             
             objectHeader.headlineLabel.text = detailItem.name
-            objectHeader.subheadlineLabel.text = "\(detailItem.price!.toString()) \(detailItem.currencyCode ?? "EUR")"
+            objectHeader.subheadlineLabel.text = "\(detailItem.price) \(detailItem.currencyCode)"
             objectHeader.footnoteLabel.text = detailItem.categoryName
             objectHeader.descriptionLabel.text = detailItem.longDescription
             
@@ -77,17 +77,17 @@ class DetailTableViewController: UIViewController, Notifier, URLSessionTaskDeleg
         case 0:
             cell.unitLabel?.text = detailItem.dimensionUnit
             cell.titleLabel.text = "Depth"
-            cell.valueTextField.text = detailItem.dimensionDepth?.toString()
+            cell.valueTextField.text = detailItem.depth
             break
         case 1:
             cell.unitLabel?.text = detailItem.dimensionUnit
             cell.titleLabel.text = "Width"
-            cell.valueTextField.text = detailItem.dimensionWidth?.toString()
+            cell.valueTextField.text = detailItem.width
             break
         case 2:
             cell.unitLabel?.text = detailItem.dimensionUnit
             cell.titleLabel.text = "Height"
-            cell.valueTextField.text = detailItem.dimensionHeight?.toString()
+            cell.valueTextField.text = detailItem.height
             break
         default: break
 
@@ -102,8 +102,6 @@ class DetailTableViewController: UIViewController, Notifier, URLSessionTaskDeleg
     ///
     /// - Parameter newItems: the current salesorderItem
     func loadSalesOrderItem(item: MyPrefixProduct) {
-        detailItem = item
+        detailItem = Part(mapping: item)
     }
-
-
 }

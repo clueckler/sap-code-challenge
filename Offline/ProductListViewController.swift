@@ -37,6 +37,8 @@ class ProductListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.title = "Products"
+        
         // Do any additional setup after loading the view.
     }
 

@@ -21,8 +21,9 @@ class HomeViewViewController: UIViewController, URLSessionTaskDelegate, UITableV
         self.oDataModel = oDataModel
     }
 
-
     override func viewDidLoad() {
+        super.viewDidLoad()
+        
         HomeTableView.dataSource = self
         HomeTableView.delegate = self
         super.viewDidLoad()

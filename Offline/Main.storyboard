@@ -444,7 +444,13 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item 2" id="cQY-04-Anz"/>
-                    <navigationItem key="navigationItem" id="rtk-4c-YSG"/>
+                    <navigationItem key="navigationItem" id="rtk-4c-YSG">
+                        <barButtonItem key="rightBarButtonItem" title="Close" id="iGq-bA-ugW">
+                            <connections>
+                                <action selector="updateStatus:" destination="abE-ZG-QoR" id="SGl-Vp-qOe"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="rWY-By-UI2" id="iD7-lR-Aqm"/>
                         <segue destination="hBx-Pz-lBX" kind="show" identifier="productDetailSegue" id="qyt-6K-QEw"/>

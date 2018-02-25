@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HomeViewViewController: UIViewController, URLSessionTaskDelegate, UITableViewDataSource, UITableViewDelegate, ActivityIndicator, TaskViewControllerDelegate {
+class HomeViewViewController: UIViewController, URLSessionTaskDelegate, UITableViewDataSource, UITableViewDelegate, ActivityIndicator, TaskDetailViewControllerDelegate {
     
     @IBOutlet weak var HomeTableView: UITableView!
     private var oDataModel: ODataModel?
@@ -122,7 +122,7 @@ class HomeViewViewController: UIViewController, URLSessionTaskDelegate, UITableV
         if segue.identifier == "Tickets" {
             let indexPath = sender as! IndexPath
             let order: MyPrefixSalesOrderHeader = salesOrders[indexPath.row]
-            let sOviewControler = segue.destination as! SalesOrderViewController
+            let sOviewControler = segue.destination as! TaskDetailViewController
             
             sOviewControler.delegate = self
             sOviewControler.initialize(oDataModel: oDataModel!)

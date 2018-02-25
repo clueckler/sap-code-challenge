@@ -88,56 +88,11 @@
                     <connections>
                         <outlet property="HomeTableView" destination="aUA-Xb-XkS" id="3QI-tw-Swd"/>
                         <segue destination="kwf-US-e00" kind="show" identifier="Equipment" id="mRg-K4-uhr"/>
-                        <segue destination="bQb-TD-VfW" kind="show" identifier="Tickets" id="gFU-kn-vl3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FUP-HK-6xo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="734" y="-630"/>
-        </scene>
-        <!--Tickets-->
-        <scene sceneID="9pK-pB-0Ew">
-            <objects>
-                <viewController id="bQb-TD-VfW" customClass="SalesOrderViewController" customModule="Offline" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="b8k-nO-7BC"/>
-                        <viewControllerLayoutGuide type="bottom" id="O8i-iL-bMw"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="ZIV-RM-Y8c">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ean-EY-87f" userLabel="SalesOrder Table">
-                                <rect key="frame" x="0.0" y="64" width="1024" height="704"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <connections>
-                                    <outlet property="dataSource" destination="bQb-TD-VfW" id="SjE-jG-j9O"/>
-                                    <outlet property="delegate" destination="bQb-TD-VfW" id="V4b-8g-Mxo"/>
-                                </connections>
-                            </tableView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="ean-EY-87f" firstAttribute="top" secondItem="b8k-nO-7BC" secondAttribute="bottom" id="5gN-M0-qab"/>
-                            <constraint firstItem="ean-EY-87f" firstAttribute="bottom" secondItem="O8i-iL-bMw" secondAttribute="top" id="8eK-AQ-r05"/>
-                            <constraint firstAttribute="trailing" secondItem="ean-EY-87f" secondAttribute="trailing" id="TTo-T1-Ogi"/>
-                            <constraint firstItem="ean-EY-87f" firstAttribute="leading" secondItem="ZIV-RM-Y8c" secondAttribute="leading" id="e14-Aj-I26"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" title="Tickets" id="zaY-TM-G0C" userLabel="Tickets">
-                        <barButtonItem key="rightBarButtonItem" title="close" id="1wm-cA-hbM" userLabel="close">
-                            <connections>
-                                <action selector="updateStatus:" destination="bQb-TD-VfW" id="2qG-rD-1e0"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                    <connections>
-                        <outlet property="SalesOrderTable" destination="ean-EY-87f" id="GPJ-rD-iJp"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="1JD-i9-ggS" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1802" y="-852"/>
         </scene>
         <!--Products-->
         <scene sceneID="Yno-Yf-zko">
@@ -446,14 +401,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="rWY-By-UI2">
-                                <rect key="frame" x="0.0" y="64" width="1004" height="655"/>
+                                <rect key="frame" x="0.0" y="64" width="1024" height="655"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PartCell" textLabel="tV0-is-Qdj" detailTextLabel="XNB-ZF-6BX" style="IBUITableViewCellStyleSubtitle" id="yNH-il-hz5">
-                                        <rect key="frame" x="0.0" y="28" width="1004" height="44"/>
+                                        <rect key="frame" x="0.0" y="28" width="1024" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="yNH-il-hz5" id="cZi-nc-CCi">
-                                            <rect key="frame" x="0.0" y="0.0" width="1004" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="1024" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="tV0-is-Qdj">
@@ -485,7 +440,7 @@
                             <constraint firstItem="rWY-By-UI2" firstAttribute="leading" secondItem="axW-RG-c6e" secondAttribute="leading" id="BNE-0p-1Ye"/>
                             <constraint firstItem="rWY-By-UI2" firstAttribute="top" secondItem="eT7-Yx-2q3" secondAttribute="bottom" id="GHj-SN-ZJn"/>
                             <constraint firstItem="u6O-WV-cUK" firstAttribute="top" secondItem="rWY-By-UI2" secondAttribute="bottom" id="IeP-Y3-Ve9"/>
-                            <constraint firstItem="rWY-By-UI2" firstAttribute="trailing" secondItem="axW-RG-c6e" secondAttribute="trailingMargin" id="pgJ-y6-cu7"/>
+                            <constraint firstItem="rWY-By-UI2" firstAttribute="trailing" secondItem="axW-RG-c6e" secondAttribute="trailing" id="pgJ-y6-cu7"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item 2" id="cQY-04-Anz"/>

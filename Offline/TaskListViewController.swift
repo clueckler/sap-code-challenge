@@ -75,7 +75,7 @@ class TaskListViewController: UIViewController {
     
 }
 
-extension TaskListViewController: TaskViewControllerDelegate {
+extension TaskListViewController: TaskDetailViewControllerDelegate {
     func didCloseTask() {
         self.navigationController?.popToRootViewController(animated: true)
         loadDataForTableView()

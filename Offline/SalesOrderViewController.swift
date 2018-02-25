@@ -9,9 +9,16 @@ import SAPFoundation
 import UIKit
 import SAPFiori
 
+protocol TaskViewControllerDelegate: class {
+    func didCloseTask()
+}
+
 class SalesOrderViewController: UIViewController, URLSessionTaskDelegate, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet var SalesOrderTable: UITableView!
+    
+    weak var delegate: TaskViewControllerDelegate?
+    
     private var task: Task!
 
     private var parts = [Part]()
@@ -119,7 +126,7 @@ class SalesOrderViewController: UIViewController, URLSessionTaskDelegate, UITabl
     /// loads the current salesorderItem
     ///
     /// - Parameter newItems: the current salesorderItem
-    public func loadSalesOrderItems(newItem: MyPrefixSalesOrderHeader) {
-        task = Task(mapping: newItem)
+    public func load(task: Task) {
+        self.task = task
     }
 }

@@ -73,7 +73,7 @@ class ProductListViewController: UIViewController, UITableViewDelegate, UITableV
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         self.title = "Products"
         oDataModel.loadAllParts { [weak self] (parts, error) in
             self?.parts = parts ?? []

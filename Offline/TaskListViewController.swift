@@ -116,6 +116,7 @@ extension TaskListViewController: UITableViewDataSource, UITableViewDelegate {
         
         let task = self.tasks[indexPath.row]
         cell.headlineText = task.taskID
+        cell.subheadlineText = task.lifeCycleStatusName
         
         return cell
     }
@@ -323,7 +324,7 @@ class TaskAnnotationView: FUIMarkerAnnotationView {
                 case 0:
                     self.priorityIcon =  FUIIconLibrary.map.marker.veryHighPriority
                 case 1:
-                    self.priorityIcon =  FUIIconLibrary.map.marker.highPriority
+                    self.priorityIcon =  FUIIconLibrary.map.marker.mediumPriority
                 default:
                     self.priorityIcon = nil
                 }

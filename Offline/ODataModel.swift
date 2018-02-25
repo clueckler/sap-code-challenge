@@ -13,7 +13,7 @@ import SAPCommon
 class ODataModel {
     private let espmOdataService: MyServiceClass<OnlineODataProvider>
     // creating the Offline Odata Provider
-    private var offlineService: MyServiceClass<OfflineODataProvider>
+     var offlineService: MyServiceClass<OfflineODataProvider>
     private(set) var isOfflineStoreOpened = false // variable is internal (app) read and private write
 
     init(urlSession: SAPURLSession) {

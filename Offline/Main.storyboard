@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="u7d-Fz-NCi">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="u7d-Fz-NCi">
     <device id="ipad9_7" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -62,9 +62,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="8BL-R2-UNx">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="8BL-R2-UNx">
                                 <rect key="frame" x="0.0" y="64" width="320" height="655"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="320" id="z20-iT-UOP"/>
                                 </constraints>
@@ -79,15 +79,25 @@
                                     <outlet property="delegate" destination="ie2-Mh-bgO" id="mT4-Bq-ffK"/>
                                 </connections>
                             </mapView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yUA-aj-w2k">
+                                <rect key="frame" x="320" y="64" width="1" height="655"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="1" id="B5f-9z-klu"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Nnw-CC-fit" firstAttribute="leading" secondItem="8BL-R2-UNx" secondAttribute="trailing" id="Fer-7m-z4w"/>
                             <constraint firstItem="8BL-R2-UNx" firstAttribute="leading" secondItem="gGz-sa-3sT" secondAttribute="leading" id="WDj-4G-4oX"/>
+                            <constraint firstItem="VAd-mv-EuI" firstAttribute="top" secondItem="yUA-aj-w2k" secondAttribute="bottom" id="bKY-MS-h5R"/>
                             <constraint firstItem="VAd-mv-EuI" firstAttribute="top" secondItem="8BL-R2-UNx" secondAttribute="bottom" id="doV-Qj-2bD"/>
                             <constraint firstItem="8BL-R2-UNx" firstAttribute="top" secondItem="y4d-Mu-sFK" secondAttribute="bottom" id="dpL-ym-BVh"/>
                             <constraint firstItem="VAd-mv-EuI" firstAttribute="top" secondItem="Nnw-CC-fit" secondAttribute="bottom" id="h4M-z3-ahv"/>
                             <constraint firstItem="Nnw-CC-fit" firstAttribute="top" secondItem="y4d-Mu-sFK" secondAttribute="bottom" id="ljl-2e-EMU"/>
+                            <constraint firstItem="yUA-aj-w2k" firstAttribute="leading" secondItem="8BL-R2-UNx" secondAttribute="trailing" id="rYN-Qb-T6w"/>
+                            <constraint firstItem="yUA-aj-w2k" firstAttribute="top" secondItem="y4d-Mu-sFK" secondAttribute="bottom" id="yyT-hP-KaL"/>
                             <constraint firstAttribute="trailing" secondItem="Nnw-CC-fit" secondAttribute="trailing" id="zv3-Nm-ZnE"/>
                         </constraints>
                     </view>
@@ -208,9 +218,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="rWY-By-UI2">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="rWY-By-UI2">
                                 <rect key="frame" x="0.0" y="64" width="1024" height="655"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <connections>
                                     <outlet property="dataSource" destination="abE-ZG-QoR" id="hVI-UR-a8L"/>
                                     <outlet property="delegate" destination="abE-ZG-QoR" id="9JZ-32-I3X"/>

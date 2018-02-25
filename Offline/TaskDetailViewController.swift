@@ -33,7 +33,14 @@ class TaskDetailViewController: UIViewController, UITableViewDelegate, UITableVi
         super.viewDidLoad()
         self.title = "Task number \(task.taskID)"
 
+        self.tableView.rowHeight = UITableViewAutomaticDimension
+        self.tableView.estimatedRowHeight = 44.0
+        self.tableView.sectionHeaderHeight = UITableViewAutomaticDimension
+        self.tableView.estimatedSectionHeaderHeight = 44.0
+        
         tableView.register(FUIObjectTableViewCell.self, forCellReuseIdentifier: "partCell")
+        tableView.register(FUITableViewHeaderFooterView.self, forHeaderFooterViewReuseIdentifier: FUITableViewHeaderFooterView.reuseIdentifier)
+        
         automaticallyAdjustsScrollViewInsets = false
         
         // Do any additional setup after loading the view
@@ -77,6 +84,15 @@ class TaskDetailViewController: UIViewController, UITableViewDelegate, UITableVi
     
     func tableView(_: UITableView, numberOfRowsInSection _: Int) -> Int {
         return parts.count // your number of cell here
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let view = tableView.dequeueReusableHeaderFooterView(withIdentifier: FUITableViewHeaderFooterView.reuseIdentifier) as! FUITableViewHeaderFooterView
+        
+        view.topPadding = 30.0
+        view.titleLabel.text = "Required Products"
+        
+        return view
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

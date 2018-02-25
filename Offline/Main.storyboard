@@ -198,7 +198,7 @@
                     <navigationItem key="navigationItem" id="QAJ-s3-oU5"/>
                     <connections>
                         <outlet property="tableView" destination="Vq4-gD-Yar" id="esn-6x-rGJ"/>
-                        <segue destination="hBx-Pz-lBX" kind="show" id="Qci-Vz-l3e"/>
+                        <segue destination="hBx-Pz-lBX" kind="show" identifier="productDetailSegue" id="Qci-Vz-l3e"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2J5-97-8aT" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -251,7 +251,7 @@
                     <connections>
                         <outlet property="mapView" destination="Nnw-CC-fit" id="9CY-ZJ-5ga"/>
                         <outlet property="tableView" destination="8BL-R2-UNx" id="ntd-px-PRb"/>
-                        <segue destination="abE-ZG-QoR" kind="show" id="Vj4-OA-i9E"/>
+                        <segue destination="abE-ZG-QoR" kind="show" identifier="taskDetailSegue" id="Vj4-OA-i9E"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fBH-bu-MuC" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -492,7 +492,7 @@
                     <navigationItem key="navigationItem" id="rtk-4c-YSG"/>
                     <connections>
                         <outlet property="tableView" destination="rWY-By-UI2" id="iD7-lR-Aqm"/>
-                        <segue destination="hBx-Pz-lBX" kind="show" id="qyt-6K-QEw"/>
+                        <segue destination="hBx-Pz-lBX" kind="show" identifier="productDetailSegue" id="qyt-6K-QEw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="364-mg-msa" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -543,6 +543,6 @@
         <image name="sap.png" width="300" height="149"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="qyt-6K-QEw"/>
+        <segue reference="Qci-Vz-l3e"/>
     </inferredMetricsTieBreakers>
 </document>

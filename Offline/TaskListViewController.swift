@@ -69,8 +69,7 @@ class TaskListViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let indexPath = sender as! IndexPath
-        let order = tasks[indexPath.row]
+        let order = sender as! Task
         let sOviewControler = segue.destination as! TaskDetailViewController
         
         sOviewControler.delegate = self
@@ -110,7 +109,7 @@ extension TaskListViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        performSegue(withIdentifier: "taskDetailSegue", sender: indexPath)
+        performSegue(withIdentifier: "taskDetailSegue", sender: tasks[indexPath.row])
     }
     
 }
@@ -119,7 +118,75 @@ extension TaskListViewController: UITableViewDataSource, UITableViewDelegate {
 extension TaskListViewController: MKMapViewDelegate {
     
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+        guard let view = view as? TaskAnnotationView else {
+            return
+        }
         
+        guard let annotation = view.annotation as? TaskAnnotation else {
+            return
+        }
+        
+        // Deselect annotation to have a clean map selection state
+        //mapView.deselectAnnotation(annotation, animated: false)
+        
+        // Calculate popover position
+        let sourceView = self.view
+        let point = mapView.convert(annotation.coordinate, toPointTo: sourceView)
+        let selectedScale: CGFloat = 2.5
+        let sourceRect = CGRect(x: point.x - ((view.bounds.size.width * selectedScale) / 2.0),
+                                y: point.y - (view.bounds.size.height * selectedScale) - 5.0,
+                                width: (view.bounds.size.width * selectedScale),
+                                height: (view.bounds.size.height * selectedScale) + 10.0)
+        
+        // Create and display popover
+        let viewController = UIViewController()
+        viewController.modalPresentationStyle = .popover
+        viewController.preferredContentSize = TaskCalloutView.preferredSize
+        
+        let calloutView = TaskCalloutView(frame: CGRect(origin: CGPoint.zero, size: TaskCalloutView.preferredSize))
+        calloutView.titleText = annotation.task.taskID
+        calloutView.subtitleText = annotation.task.lifeCycleStatusName
+        calloutView.route = nil
+        viewController.view.addSubview(calloutView)
+        
+        self.requestTravelTime(annotation.coordinate) { (route) in
+            calloutView.route = route
+        }
+        
+        calloutView.showCustomer = { _ in
+            self.dismiss(animated: false)
+            self.mapView.deselectAnnotation(annotation, animated: false)
+            
+            self.performSegue(withIdentifier: "taskDetailSegue", sender: annotation.task)
+        }
+        
+        calloutView.getDirection = { _ in
+            let mapItem = MKMapItem(placemark: MKPlacemark(coordinate: annotation.coordinate, addressDictionary: nil))
+            mapItem.name = annotation.task.taskID
+            mapItem.openInMaps(launchOptions: [MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeDriving])
+        }
+        
+        self.present(viewController, animated: true)
+        
+        if let popover = viewController.popoverPresentationController {
+            popover.permittedArrowDirections = [.down, .up]
+            popover.sourceView = sourceView
+            popover.sourceRect = sourceRect
+            popover.delegate = self
+        }
+    }
+    
+}
+
+// MARK: - UIPopoverPresentationControllerDelegate
+extension TaskListViewController: UIPopoverPresentationControllerDelegate {
+    
+    // This method is called when the user clicks outside of the popoverViewController
+    func popoverPresentationControllerShouldDismissPopover(_ popoverPresentationController: UIPopoverPresentationController) -> Bool {
+        for annotation in self.mapView.selectedAnnotations {
+            self.mapView.deselectAnnotation(annotation, animated: true)
+        }
+        return true
     }
     
 }
@@ -168,6 +235,19 @@ extension TaskListViewController {
         self.toolbar.translatesAutoresizingMaskIntoConstraints = false
         self.toolbar.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 15.0).isActive = true
         self.toolbar.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -15.0).isActive = true
+    }
+    
+    private func requestTravelTime(_ coordinate: CLLocationCoordinate2D, completion: @escaping ((MKRoute) -> Void)) {
+        let request = MKDirectionsRequest()
+        request.source = MKMapItem.forCurrentLocation()
+        request.destination = MKMapItem(placemark: MKPlacemark(coordinate: coordinate, addressDictionary: nil))
+        
+        let directions = MKDirections(request: request)
+        directions.calculate { (response, _) in
+            if let route = response?.routes.first {
+                completion(route)
+            }
+        }
     }
     
 }

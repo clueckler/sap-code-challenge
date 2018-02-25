@@ -54,6 +54,8 @@
 		F6F2260A2042EAE200A6D485 /* TaskListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F226092042EAE200A6D485 /* TaskListViewController.swift */; };
 		F6F2260C2042EAF200A6D485 /* ProductListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F2260B2042EAF200A6D485 /* ProductListViewController.swift */; };
 		F6F2260E2042EAFB00A6D485 /* ProductDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F2260D2042EAFB00A6D485 /* ProductDetailViewController.swift */; };
+		F6FD77952042FC5900F5A69F /* TaskCalloutView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6FD77932042FC5900F5A69F /* TaskCalloutView.xib */; };
+		F6FD77962042FC5900F5A69F /* TaskCalloutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6FD77942042FC5900F5A69F /* TaskCalloutView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -137,6 +139,8 @@
 		F6F226092042EAE200A6D485 /* TaskListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListViewController.swift; sourceTree = "<group>"; };
 		F6F2260B2042EAF200A6D485 /* ProductListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListViewController.swift; sourceTree = "<group>"; };
 		F6F2260D2042EAFB00A6D485 /* ProductDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailViewController.swift; sourceTree = "<group>"; };
+		F6FD77932042FC5900F5A69F /* TaskCalloutView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TaskCalloutView.xib; sourceTree = "<group>"; };
+		F6FD77942042FC5900F5A69F /* TaskCalloutView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskCalloutView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -294,6 +298,8 @@
 			isa = PBXGroup;
 			children = (
 				F6F226092042EAE200A6D485 /* TaskListViewController.swift */,
+				F6FD77942042FC5900F5A69F /* TaskCalloutView.swift */,
+				F6FD77932042FC5900F5A69F /* TaskCalloutView.xib */,
 				F6F226072042EAD800A6D485 /* TaskDetailViewController.swift */,
 				F6F2260B2042EAF200A6D485 /* ProductListViewController.swift */,
 				F6F2260D2042EAFB00A6D485 /* ProductDetailViewController.swift */,
@@ -412,6 +418,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6C359BD11EAF7C2C007F34B6 /* Main.storyboard in Resources */,
+				F6FD77952042FC5900F5A69F /* TaskCalloutView.xib in Resources */,
 				6C4C99691DF19D45004970FF /* Assets.xcassets in Resources */,
 				6C08B8791E68670F003DFB69 /* sap.png in Resources */,
 			);
@@ -440,6 +447,7 @@
 			files = (
 				E0873B2C202866C100813A75 /* MyServiceClassStaticResolver.swift in Sources */,
 				BB67F42F2042F7BE00207174 /* SingletonImSorry.swift in Sources */,
+				F6FD77962042FC5900F5A69F /* TaskCalloutView.swift in Sources */,
 				E00FC0761F4EC32B00CC339A /* MyServiceClassMetadata.swift in Sources */,
 				BB67F42D2042ED3000207174 /* DomainModel.swift in Sources */,
 				E00FC0801F4EC33800CC339A /* MyServiceClassMetadataText.swift in Sources */,

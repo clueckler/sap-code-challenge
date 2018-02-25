@@ -9,6 +9,8 @@
 import UIKit
 import CoreLocation
 
+var locationCache: [String: CLLocationCoordinate2D] = [:]
+
 extension CLLocationCoordinate2D {
     func translate(byLatitude latitudeDelta: Double, byLongitude longitudeDelta: Double) -> CLLocationCoordinate2D {
         return CLLocationCoordinate2D(latitude: self.latitude + latitudeDelta , longitude: self.longitude + longitudeDelta)
@@ -23,19 +25,29 @@ private func randomizeLocation() -> CLLocationCoordinate2D {
     return firaBarcelonaGranVia.translate(byLatitude: latitudeDelta, byLongitude: longitudeDelta)
 }
 
+private func location(for taskID: String) -> CLLocationCoordinate2D {
+    guard let location = locationCache[taskID] else {
+        let location = randomizeLocation()
+        locationCache[taskID] = location
+        return location
+    }
+    return location
+}
+
 class Task {
     let source: MyPrefixSalesOrderHeader
 
     let taskID: String
     let lifeCycleStatusName: String
     let salesOrder: MyPrefixSalesOrderHeader
-    let coordinates: CLLocationCoordinate2D = randomizeLocation()
+    let coordinates: CLLocationCoordinate2D
 
     init(mapping: MyPrefixSalesOrderHeader) {
         source = mapping
         taskID = mapping.salesOrderID ?? "UNKNOWN"
         lifeCycleStatusName = mapping.lifeCycleStatusName ?? "New"
         salesOrder = mapping
+        coordinates = location(for: taskID)
     }
 }
 

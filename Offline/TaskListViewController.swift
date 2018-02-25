@@ -63,6 +63,19 @@ class TaskListViewController: UIViewController {
         self.setupToolbar()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.locationManager?.requestWhenInUseAuthorization()
+        self.locationManager?.startUpdatingLocation()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        self.locationManager?.stopUpdatingLocation()
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let order = sender as! Task
         let sOviewControler = segue.destination as! TaskDetailViewController
@@ -104,7 +117,8 @@ extension TaskListViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        performSegue(withIdentifier: "taskDetailSegue", sender: tasks[indexPath.row])
+        
+        self.selectMapAnnotation(tasks[indexPath.row])
     }
     
 }
@@ -244,6 +258,25 @@ extension TaskListViewController {
         }
     }
     
+    private func selectMapAnnotation(_ task: Task, animated: Bool = true) {
+        let annotation = self.mapView.annotations.first { (mapAnnotation) -> Bool in
+            guard let annotation = mapAnnotation as? TaskAnnotation else {
+                return false
+            }
+            return annotation.task.taskID == task.taskID
+        }
+        
+        if let annotation = annotation {
+            self.mapView.selectAnnotation(annotation, animated: animated)
+            
+            // Check if the annotation is displayed in the visible rect, otherwise zoom to the selected annotation
+            let annotations = self.mapView.annotations(in: self.mapView.visibleMapRect)
+            if !annotations.contains(annotation as! AnyHashable) {
+                self.mapView.showAnnotations([annotation], animated: true)
+            }
+        }
+    }
+    
 }
 
 class TaskAnnotation: MKPointAnnotation {
@@ -277,6 +310,18 @@ class TaskAnnotationView: FUIMarkerAnnotationView {
     override var annotation: MKAnnotation? {
         willSet {
             self.displayPriority = .defaultLow
+            self.glyphImage = FUIIconLibrary.map.marker.job.withRenderingMode(.alwaysTemplate)
+            
+            if let anno = newValue as? TaskAnnotation {
+                switch arc4random_uniform(3) {
+                case 0:
+                    self.priorityIcon =  FUIIconLibrary.map.marker.veryHighPriority
+                case 1:
+                    self.priorityIcon =  FUIIconLibrary.map.marker.highPriority
+                default:
+                    self.priorityIcon = nil
+                }
+            }
         }
     }
     

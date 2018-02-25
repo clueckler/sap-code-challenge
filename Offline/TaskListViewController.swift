@@ -20,8 +20,36 @@ class TaskListViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var mapView: MKMapView!
+    var toolbar: FUIMapToolbar!
     
     var tasks = [DummyData]()
+    var locationManager: CLLocationManager?
+    
+    // MARK: Init
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        self.customInit()
+    }
+    
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        self.customInit()
+    }
+    
+    private func customInit() {
+        // Configure tabBarItem
+        self.tabBarItem = UITabBarItem(title: "Tasks",
+                                       image: FUIIconLibrary.system.listView.withRenderingMode(.alwaysTemplate),
+                                       tag: 0)
+        
+        // Setup location manager
+        let manager = CLLocationManager()
+        manager.delegate = self
+        self.locationManager = manager
+    }
+    
+    // MARK: View life cylce
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +59,7 @@ class TaskListViewController: UIViewController {
 
         self.loadDataForTableView()
         self.loadDataForMapView()
+        self.setupToolbar()
     }
 
 }
@@ -63,6 +92,27 @@ extension TaskListViewController: UITableViewDataSource, UITableViewDelegate {
     
 }
 
+// MARK: - MKMapViewDelegate
+extension TaskListViewController: MKMapViewDelegate {
+    
+    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+        
+    }
+    
+}
+
+// MARK: - CLLocationManagerDelegate
+extension TaskListViewController: CLLocationManagerDelegate {
+    
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        if status == .authorizedWhenInUse {
+            manager.startUpdatingLocation()
+        }
+    }
+    
+}
+
+// MARK: - Private methods
 extension TaskListViewController {
     
     private func loadDataForTableView() {
@@ -76,6 +126,22 @@ extension TaskListViewController {
             self.mapView.addAnnotations(annotations)
             self.mapView.showAnnotations(annotations, animated: true)
         }
+    }
+    
+    private func setupToolbar() {
+        self.toolbar = FUIMapToolbar(mapView: self.mapView)
+        self.toolbar.backgroundColorScheme = .lightBackground
+        
+        let locationButton = FUIMapToolbarUserLocationButton(mapView: self.mapView)
+        
+        let zoomExtentsButton = FUIMapToolbarZoomExtentButton(mapView: self.mapView)
+        
+        self.toolbar.items = [locationButton, zoomExtentsButton]
+        
+        self.view.insertSubview(self.toolbar, aboveSubview: self.mapView)
+        self.toolbar.translatesAutoresizingMaskIntoConstraints = false
+        self.toolbar.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 15.0).isActive = true
+        self.toolbar.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -15.0).isActive = true
     }
     
 }
@@ -115,3 +181,5 @@ class TaskAnnotationView: FUIMarkerAnnotationView {
     }
     
 }
+
+

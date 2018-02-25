@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -70,7 +69,7 @@
                     <navigationItem key="navigationItem" id="QAJ-s3-oU5"/>
                     <connections>
                         <outlet property="tableView" destination="Vq4-gD-Yar" id="agZ-pS-yVo"/>
-                        <segue destination="hBx-Pz-lBX" kind="show" identifier="productDetailSegue" id="Qci-Vz-l3e"/>
+                        <segue destination="hBx-Pz-lBX" kind="show" identifier="partDetailSegue" id="Qci-Vz-l3e"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2J5-97-8aT" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -178,42 +177,23 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sap.png" translatesAutoresizingMaskIntoConstraints="NO" id="lFF-kh-9Ff">
-                                <rect key="frame" x="71" y="269" width="429.5" height="229"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="lFF-kh-9Ff" secondAttribute="height" multiplier="15:8" id="1Ay-g4-MXp"/>
-                                </constraints>
+                                <rect key="frame" x="362" y="309.5" width="300" height="149"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mobile Interactive Tutorials" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5g8-OY-sIm">
-                                <rect key="frame" x="0.0" y="135" width="572.5" height="74"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="74" id="VUW-1J-a7q"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tga-79-gCJ">
-                                <rect key="frame" x="71" y="552" width="429.5" height="179"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tga-79-gCJ">
+                                <rect key="frame" x="100" y="474.5" width="824" height="277.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="179" id="anK-gL-XPR"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="lFF-kh-9Ff" firstAttribute="top" secondItem="5g8-OY-sIm" secondAttribute="bottom" constant="60" id="8x5-NA-mSA"/>
-                            <constraint firstAttribute="trailing" secondItem="5g8-OY-sIm" secondAttribute="trailing" id="BQ3-Kc-oNR"/>
-                            <constraint firstItem="5g8-OY-sIm" firstAttribute="leading" secondItem="oe6-G1-CTp" secondAttribute="leading" id="HCS-q8-WdS"/>
-                            <constraint firstItem="tga-79-gCJ" firstAttribute="leading" secondItem="lFF-kh-9Ff" secondAttribute="leading" id="MxX-0E-yAc"/>
-                            <constraint firstItem="tga-79-gCJ" firstAttribute="top" secondItem="lFF-kh-9Ff" secondAttribute="bottom" constant="54" id="PXf-xo-Fqo"/>
-                            <constraint firstItem="tga-79-gCJ" firstAttribute="leading" secondItem="oe6-G1-CTp" secondAttribute="leadingMargin" constant="51" id="QXO-Od-2fu"/>
-                            <constraint firstItem="5g8-OY-sIm" firstAttribute="centerX" secondItem="tga-79-gCJ" secondAttribute="centerX" id="r7y-Ex-lK9"/>
-                            <constraint firstItem="5g8-OY-sIm" firstAttribute="top" secondItem="r3V-uh-llz" secondAttribute="bottom" constant="115" id="rEn-tm-L8d"/>
-                            <constraint firstItem="0f2-Ba-9s4" firstAttribute="top" secondItem="tga-79-gCJ" secondAttribute="bottom" constant="37" id="vDV-Em-sr2"/>
-                            <constraint firstItem="5g8-OY-sIm" firstAttribute="centerX" secondItem="lFF-kh-9Ff" secondAttribute="centerX" id="yYu-Wa-cqx"/>
+                            <constraint firstItem="lFF-kh-9Ff" firstAttribute="centerY" secondItem="oe6-G1-CTp" secondAttribute="centerY" id="DXg-5c-pDZ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="tga-79-gCJ" secondAttribute="trailing" constant="80" id="Mlf-fQ-MWN"/>
+                            <constraint firstItem="lFF-kh-9Ff" firstAttribute="centerX" secondItem="oe6-G1-CTp" secondAttribute="centerX" id="joJ-dr-prd"/>
+                            <constraint firstItem="0f2-Ba-9s4" firstAttribute="top" secondItem="tga-79-gCJ" secondAttribute="bottom" constant="16" id="lL6-Yt-p9W"/>
+                            <constraint firstItem="tga-79-gCJ" firstAttribute="leading" secondItem="oe6-G1-CTp" secondAttribute="leadingMargin" constant="80" id="sRr-dr-lq3"/>
+                            <constraint firstItem="tga-79-gCJ" firstAttribute="top" secondItem="lFF-kh-9Ff" secondAttribute="bottom" constant="16" id="t9Q-0b-6MM"/>
                         </constraints>
                     </view>
                     <connections>
@@ -242,10 +222,10 @@
             </objects>
             <point key="canvasLocation" x="937" y="1286"/>
         </scene>
-        <!--Item 2-->
+        <!--Task-->
         <scene sceneID="Xha-cL-379">
             <objects>
-                <viewController id="abE-ZG-QoR" customClass="TaskDetailViewController" customModule="Offline" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Task" id="abE-ZG-QoR" customClass="TaskDetailViewController" customModule="Offline" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="eT7-Yx-2q3"/>
                         <viewControllerLayoutGuide type="bottom" id="u6O-WV-cUK"/>
@@ -314,10 +294,10 @@
             </objects>
             <point key="canvasLocation" x="2565.8203125" y="572.65625"/>
         </scene>
-        <!--Item 2-->
+        <!--Part-->
         <scene sceneID="eBk-jg-JFY">
             <objects>
-                <viewController id="hBx-Pz-lBX" customClass="ProductDetailViewController" customModule="Offline" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Part" id="hBx-Pz-lBX" customClass="ProductDetailViewController" customModule="Offline" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="9UK-h3-Z85"/>
                         <viewControllerLayoutGuide type="bottom" id="T0Z-HU-QxK"/>

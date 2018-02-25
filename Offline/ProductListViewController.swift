@@ -50,6 +50,18 @@ class ProductListViewController: UIViewController, UITableViewDelegate, UITableV
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "partDetailSegue", sender: indexPath)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "partDetailSegue", let indexPath = sender as? IndexPath {
+            let part = parts[indexPath.row]
+            let vc = segue.destination as! ProductDetailViewController
+            vc.load(part: part)
+        }
+    }
+    
     // MARK: View life cylce
     
     override func viewDidLoad() {

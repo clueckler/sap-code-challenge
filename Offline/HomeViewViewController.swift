@@ -140,19 +140,14 @@ class HomeViewViewController: UIViewController, URLSessionTaskDelegate, UITableV
         
     }
     private func loadData() {
-        self.oDataModel!.loadSalesOpenOrders { resultSalesOrders, error in
-            
-            if error != nil {
-                // handle error in future version
-            }
-            if let tempSalesOrders = resultSalesOrders {
-                self.salesOrders = tempSalesOrders
-            }
+        oDataModel?.loadOpenTasks { tasks, _ in
+            self.salesOrders = tasks.map { $0.source }
             OperationQueue.main.addOperation {
                 self.HomeTableView.reloadData()
-                
+
             }
         }
+
         self.oDataModel!.loadProdcuts{ resultProducts, error in
             
             if error != nil {

@@ -13,9 +13,9 @@ import SAPFoundation
 class Authenticator: NSObject, SAPURLSessionDelegate {
 
     struct Constants {
-        static let appID = "sap.mwcDemo"
-        static let connectionID = "sap.mwcDemo"
-        private static let sapcpmsURLString = "https://hcpms-p1942218264trial.hanatrial.ondemand.com/"
+        static let appID = "net.netconomy.dummy"
+        static let connectionID = "net.netconomy.dummy"
+        private static let sapcpmsURLString = "https://hcpms-s0018675195trial.hanatrial.ondemand.com/"
         static let sapcpmsURL = URL(string: sapcpmsURLString)!
         static let appURL = sapcpmsURL.appendingPathComponent(connectionID)
         static let samlAuthURL = URL(string: "\(sapcpmsURL.absoluteString)SAMLAuthLauncher")!

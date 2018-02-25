@@ -128,6 +128,7 @@ class TaskDetailViewController: UIViewController, UITableViewDelegate, UITableVi
         if segue.identifier == "partDetailSegue", let indexPath = sender as? IndexPath {
             let part = parts[indexPath.row]
             let vc = segue.destination as! ProductDetailViewController
+            vc.showOrder = true
             vc.load(part: part)
         }
     }

@@ -11,7 +11,9 @@ import SAPFiori
 
 class ProductDetailViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
+    @IBOutlet weak var orderButton: UIBarButtonItem!
     var part: Part!
+    var showOrder = false
     @IBOutlet weak var tableView: UITableView!
     
     /// Delegate function from UIViewController
@@ -32,6 +34,21 @@ class ProductDetailViewController: UIViewController, UITableViewDelegate, UITabl
         
         objectHeader.statusLabel.text = part.price
         tableView.tableHeaderView = objectHeader
+        
+        
+        if !showOrder {
+            navigationItem.rightBarButtonItem = nil
+        }
+    }
+    
+    @IBAction func orderMoreParts(_ sender: Any) {
+        let controller =  UIAlertController(title: "Success", message: "More parts are on their way. You'll receive a notification when they are ready to collect at the warehouse.", preferredStyle: .alert)
+        
+        controller.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
+            controller.dismiss(animated: true, completion: nil)
+        }))
+        
+        present(controller, animated: true, completion: nil)
     }
     
     func numberOfSections(in _: UITableView) -> Int {

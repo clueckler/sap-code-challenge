@@ -1,0 +1,717 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6C08B8791E68670F003DFB69 /* sap.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C08B8771E68670F003DFB69 /* sap.png */; };
+		6C08B87A1E68670F003DFB69 /* StartScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C08B8781E68670F003DFB69 /* StartScreenViewController.swift */; };
+		6C359BD11EAF7C2C007F34B6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6C359BD01EAF7C2C007F34B6 /* Main.storyboard */; };
+		6C4030F21E5D7FF100FD6F8F /* SalesOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C4030EF1E5D7FF100FD6F8F /* SalesOrderViewController.swift */; };
+		6C4030F41E5D7FF100FD6F8F /* DetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C4030F11E5D7FF100FD6F8F /* DetailTableViewController.swift */; };
+		6C4030F61E5D7FFB00FD6F8F /* EditableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C4030F51E5D7FFB00FD6F8F /* EditableCell.swift */; };
+		6C481B6D202AFC06005DFAB7 /* HomeViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C481B6C202AFC06005DFAB7 /* HomeViewViewController.swift */; };
+		6C481B6F202B2130005DFAB7 /* SAPFiori.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C481B6E202B212F005DFAB7 /* SAPFiori.framework */; };
+		6C481B72202B2947005DFAB7 /* SAPFiori.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C481B6E202B212F005DFAB7 /* SAPFiori.framework */; };
+		6C481B73202B2947005DFAB7 /* SAPFiori.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6C481B6E202B212F005DFAB7 /* SAPFiori.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		6C4C99681DF19D45004970FF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C4C994E1DF19D45004970FF /* AppDelegate.swift */; };
+		6C4C99691DF19D45004970FF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6C4C994F1DF19D45004970FF /* Assets.xcassets */; };
+		6C4C996A1DF19D45004970FF /* Authenticator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C4C99501DF19D45004970FF /* Authenticator.swift */; };
+		6C4C996C1DF19D45004970FF /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C4C99521DF19D45004970FF /* Constants.swift */; };
+		6C4C996E1DF19D45004970FF /* ODataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C4C99541DF19D45004970FF /* ODataModel.swift */; };
+		6CF8D7001E8E843200049D1C /* Notifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF8D6FF1E8E843200049D1C /* Notifier.swift */; };
+		6CFA48E01E8934B000D36D9C /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CFA48DF1E8934B000D36D9C /* ActivityIndicator.swift */; };
+		E00FC06D1F4EC32B00CC339A /* MyPrefixPurchaseOrderItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E00FC0611F4EC32B00CC339A /* MyPrefixPurchaseOrderItem.swift */; };
+		E00FC06E1F4EC32B00CC339A /* MyPrefixProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = E00FC0621F4EC32B00CC339A /* MyPrefixProduct.swift */; };
+		E00FC06F1F4EC32B00CC339A /* MyPrefixCustomer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E00FC0631F4EC32B00CC339A /* MyPrefixCustomer.swift */; };
+		E00FC0701F4EC32B00CC339A /* MyServiceClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E00FC0641F4EC32B00CC339A /* MyServiceClass.swift */; };
+		E00FC0711F4EC32B00CC339A /* MyPrefixProductText.swift in Sources */ = {isa = PBXBuildFile; fileRef = E00FC0651F4EC32B00CC339A /* MyPrefixProductText.swift */; };
+		E00FC0721F4EC32B00CC339A /* MyPrefixPurchaseOrderHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E00FC0661F4EC32B00CC339A /* MyPrefixPurchaseOrderHeader.swift */; };
+		E00FC0731F4EC32B00CC339A /* MyPrefixSupplier.swift in Sources */ = {isa = PBXBuildFile; fileRef = E00FC0671F4EC32B00CC339A /* MyPrefixSupplier.swift */; };
+		E00FC0741F4EC32B00CC339A /* MyPrefixSalesOrderHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E00FC0681F4EC32B00CC339A /* MyPrefixSalesOrderHeader.swift */; };
+		E00FC0751F4EC32B00CC339A /* MyPrefixProductCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E00FC0691F4EC32B00CC339A /* MyPrefixProductCategory.swift */; };
+		E00FC0761F4EC32B00CC339A /* MyServiceClassMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = E00FC06A1F4EC32B00CC339A /* MyServiceClassMetadata.swift */; };
+		E00FC0771F4EC32B00CC339A /* MyPrefixSalesOrderItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E00FC06B1F4EC32B00CC339A /* MyPrefixSalesOrderItem.swift */; };
+		E00FC0781F4EC32B00CC339A /* MyPrefixStock.swift in Sources */ = {isa = PBXBuildFile; fileRef = E00FC06C1F4EC32B00CC339A /* MyPrefixStock.swift */; };
+		E00FC07D1F4EC33800CC339A /* MyServiceClassFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E00FC0791F4EC33800CC339A /* MyServiceClassFactory.swift */; };
+		E00FC07E1F4EC33800CC339A /* MyServiceClassMetadataParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E00FC07A1F4EC33800CC339A /* MyServiceClassMetadataParser.swift */; };
+		E00FC07F1F4EC33800CC339A /* MyServiceClassMetadataChanges.swift in Sources */ = {isa = PBXBuildFile; fileRef = E00FC07B1F4EC33800CC339A /* MyServiceClassMetadataChanges.swift */; };
+		E00FC0801F4EC33800CC339A /* MyServiceClassMetadataText.swift in Sources */ = {isa = PBXBuildFile; fileRef = E00FC07C1F4EC33800CC339A /* MyServiceClassMetadataText.swift */; };
+		E0873B2C202866C100813A75 /* MyServiceClassStaticResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0873B2B202866C100813A75 /* MyServiceClassStaticResolver.swift */; };
+		E092AA441EBB296400695346 /* SAPCommon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E092AA401EBB296400695346 /* SAPCommon.framework */; };
+		E092AA451EBB296400695346 /* SAPCommon.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E092AA401EBB296400695346 /* SAPCommon.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E092AA461EBB296400695346 /* SAPFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E092AA411EBB296400695346 /* SAPFoundation.framework */; };
+		E092AA471EBB296400695346 /* SAPFoundation.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E092AA411EBB296400695346 /* SAPFoundation.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E092AA481EBB296400695346 /* SAPOData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E092AA421EBB296400695346 /* SAPOData.framework */; };
+		E092AA491EBB296400695346 /* SAPOData.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E092AA421EBB296400695346 /* SAPOData.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E092AA4A1EBB296400695346 /* SAPOfflineOData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E092AA431EBB296400695346 /* SAPOfflineOData.framework */; };
+		E092AA4B1EBB296400695346 /* SAPOfflineOData.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E092AA431EBB296400695346 /* SAPOfflineOData.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		6C4C99321DF19CCD004970FF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6C4C99151DF19CCD004970FF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6C4C991C1DF19CCD004970FF;
+			remoteInfo = Offline;
+		};
+		6C4C993D1DF19CCD004970FF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6C4C99151DF19CCD004970FF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6C4C991C1DF19CCD004970FF;
+			remoteInfo = Offline;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		E0A61C8D1EBA12D2000D82BE /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				E092AA491EBB296400695346 /* SAPOData.framework in Embed Frameworks */,
+				6C481B73202B2947005DFAB7 /* SAPFiori.framework in Embed Frameworks */,
+				E092AA4B1EBB296400695346 /* SAPOfflineOData.framework in Embed Frameworks */,
+				E092AA471EBB296400695346 /* SAPFoundation.framework in Embed Frameworks */,
+				E092AA451EBB296400695346 /* SAPCommon.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		6C08B8771E68670F003DFB69 /* sap.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sap.png; sourceTree = "<group>"; };
+		6C08B8781E68670F003DFB69 /* StartScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartScreenViewController.swift; sourceTree = "<group>"; };
+		6C359BD01EAF7C2C007F34B6 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		6C4030EF1E5D7FF100FD6F8F /* SalesOrderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SalesOrderViewController.swift; sourceTree = "<group>"; };
+		6C4030F11E5D7FF100FD6F8F /* DetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailTableViewController.swift; sourceTree = "<group>"; };
+		6C4030F51E5D7FFB00FD6F8F /* EditableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditableCell.swift; sourceTree = "<group>"; };
+		6C481B6C202AFC06005DFAB7 /* HomeViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewViewController.swift; sourceTree = "<group>"; };
+		6C481B6E202B212F005DFAB7 /* SAPFiori.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SAPFiori.framework; path = "Frameworks/Release-fat/SAPFiori.framework"; sourceTree = "<group>"; };
+		6C4C991D1DF19CCD004970FF /* Offline.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Offline.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6C4C99311DF19CCD004970FF /* OfflineTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OfflineTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6C4C993C1DF19CCD004970FF /* OfflineUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OfflineUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6C4C994E1DF19D45004970FF /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = AppDelegate.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		6C4C994F1DF19D45004970FF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		6C4C99501DF19D45004970FF /* Authenticator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = Authenticator.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		6C4C99521DF19D45004970FF /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = Constants.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		6C4C99531DF19D45004970FF /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6C4C99541DF19D45004970FF /* ODataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = ODataModel.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		6CF8D6FF1E8E843200049D1C /* Notifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notifier.swift; sourceTree = "<group>"; };
+		6CFA48DF1E8934B000D36D9C /* ActivityIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
+		E00FC0611F4EC32B00CC339A /* MyPrefixPurchaseOrderItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPrefixPurchaseOrderItem.swift; sourceTree = "<group>"; };
+		E00FC0621F4EC32B00CC339A /* MyPrefixProduct.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPrefixProduct.swift; sourceTree = "<group>"; };
+		E00FC0631F4EC32B00CC339A /* MyPrefixCustomer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPrefixCustomer.swift; sourceTree = "<group>"; };
+		E00FC0641F4EC32B00CC339A /* MyServiceClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyServiceClass.swift; sourceTree = "<group>"; };
+		E00FC0651F4EC32B00CC339A /* MyPrefixProductText.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPrefixProductText.swift; sourceTree = "<group>"; };
+		E00FC0661F4EC32B00CC339A /* MyPrefixPurchaseOrderHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPrefixPurchaseOrderHeader.swift; sourceTree = "<group>"; };
+		E00FC0671F4EC32B00CC339A /* MyPrefixSupplier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPrefixSupplier.swift; sourceTree = "<group>"; };
+		E00FC0681F4EC32B00CC339A /* MyPrefixSalesOrderHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPrefixSalesOrderHeader.swift; sourceTree = "<group>"; };
+		E00FC0691F4EC32B00CC339A /* MyPrefixProductCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPrefixProductCategory.swift; sourceTree = "<group>"; };
+		E00FC06A1F4EC32B00CC339A /* MyServiceClassMetadata.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyServiceClassMetadata.swift; sourceTree = "<group>"; };
+		E00FC06B1F4EC32B00CC339A /* MyPrefixSalesOrderItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPrefixSalesOrderItem.swift; sourceTree = "<group>"; };
+		E00FC06C1F4EC32B00CC339A /* MyPrefixStock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPrefixStock.swift; sourceTree = "<group>"; };
+		E00FC0791F4EC33800CC339A /* MyServiceClassFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyServiceClassFactory.swift; sourceTree = "<group>"; };
+		E00FC07A1F4EC33800CC339A /* MyServiceClassMetadataParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyServiceClassMetadataParser.swift; sourceTree = "<group>"; };
+		E00FC07B1F4EC33800CC339A /* MyServiceClassMetadataChanges.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyServiceClassMetadataChanges.swift; sourceTree = "<group>"; };
+		E00FC07C1F4EC33800CC339A /* MyServiceClassMetadataText.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyServiceClassMetadataText.swift; sourceTree = "<group>"; };
+		E0873B2B202866C100813A75 /* MyServiceClassStaticResolver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyServiceClassStaticResolver.swift; sourceTree = "<group>"; };
+		E092AA401EBB296400695346 /* SAPCommon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SAPCommon.framework; path = "Frameworks/Release-fat/SAPCommon.framework"; sourceTree = "<group>"; };
+		E092AA411EBB296400695346 /* SAPFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SAPFoundation.framework; path = "Frameworks/Release-fat/SAPFoundation.framework"; sourceTree = "<group>"; };
+		E092AA421EBB296400695346 /* SAPOData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SAPOData.framework; path = "Frameworks/Release-fat/SAPOData.framework"; sourceTree = "<group>"; };
+		E092AA431EBB296400695346 /* SAPOfflineOData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SAPOfflineOData.framework; path = "Frameworks/Release-fat/SAPOfflineOData.framework"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6C4C991A1DF19CCD004970FF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E092AA481EBB296400695346 /* SAPOData.framework in Frameworks */,
+				6C481B72202B2947005DFAB7 /* SAPFiori.framework in Frameworks */,
+				6C481B6F202B2130005DFAB7 /* SAPFiori.framework in Frameworks */,
+				E092AA4A1EBB296400695346 /* SAPOfflineOData.framework in Frameworks */,
+				E092AA461EBB296400695346 /* SAPFoundation.framework in Frameworks */,
+				E092AA441EBB296400695346 /* SAPCommon.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6C4C992E1DF19CCD004970FF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6C4C99391DF19CCD004970FF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6C4C99141DF19CCD004970FF = {
+			isa = PBXGroup;
+			children = (
+				6C481B6E202B212F005DFAB7 /* SAPFiori.framework */,
+				E092AA401EBB296400695346 /* SAPCommon.framework */,
+				E092AA411EBB296400695346 /* SAPFoundation.framework */,
+				E092AA421EBB296400695346 /* SAPOData.framework */,
+				E092AA431EBB296400695346 /* SAPOfflineOData.framework */,
+				6C4C991F1DF19CCD004970FF /* Offline */,
+				6C4C991E1DF19CCD004970FF /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		6C4C991E1DF19CCD004970FF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6C4C991D1DF19CCD004970FF /* Offline.app */,
+				6C4C99311DF19CCD004970FF /* OfflineTests.xctest */,
+				6C4C993C1DF19CCD004970FF /* OfflineUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6C4C991F1DF19CCD004970FF /* Offline */ = {
+			isa = PBXGroup;
+			children = (
+				6C4C994E1DF19D45004970FF /* AppDelegate.swift */,
+				6C4C994F1DF19D45004970FF /* Assets.xcassets */,
+				6CF8D6FE1E8E839900049D1C /* Helper */,
+				6C4C99531DF19D45004970FF /* Info.plist */,
+				6C359BD01EAF7C2C007F34B6 /* Main.storyboard */,
+				6C4C99831DF19D65004970FF /* Model */,
+				6C4C99841DF19D89004970FF /* View */,
+			);
+			path = Offline;
+			sourceTree = "<group>";
+		};
+		6C4C99561DF19D45004970FF /* ProxyClasses */ = {
+			isa = PBXGroup;
+			children = (
+				E00FC05E1F4EC2CB00CC339A /* com.sap.mit.online */,
+			);
+			path = ProxyClasses;
+			sourceTree = "<group>";
+		};
+		6C4C99831DF19D65004970FF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				6C4C99541DF19D45004970FF /* ODataModel.swift */,
+				6C4C99521DF19D45004970FF /* Constants.swift */,
+				6C4C99561DF19D45004970FF /* ProxyClasses */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		6C4C99841DF19D89004970FF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				6CFA48DF1E8934B000D36D9C /* ActivityIndicator.swift */,
+				6C08B8771E68670F003DFB69 /* sap.png */,
+				6C08B8781E68670F003DFB69 /* StartScreenViewController.swift */,
+				6C4030F51E5D7FFB00FD6F8F /* EditableCell.swift */,
+				6C4030EF1E5D7FF100FD6F8F /* SalesOrderViewController.swift */,
+				6C4030F11E5D7FF100FD6F8F /* DetailTableViewController.swift */,
+				6C481B6C202AFC06005DFAB7 /* HomeViewViewController.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		6CF8D6FE1E8E839900049D1C /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				6CF8D6FF1E8E843200049D1C /* Notifier.swift */,
+				6C4C99501DF19D45004970FF /* Authenticator.swift */,
+			);
+			name = Helper;
+			sourceTree = "<group>";
+		};
+		E00FC05E1F4EC2CB00CC339A /* com.sap.mit.online */ = {
+			isa = PBXGroup;
+			children = (
+				E00FC0601F4EC2F000CC339A /* public */,
+				E00FC05F1F4EC2E800CC339A /* internal */,
+			);
+			path = com.sap.mit.online;
+			sourceTree = "<group>";
+		};
+		E00FC05F1F4EC2E800CC339A /* internal */ = {
+			isa = PBXGroup;
+			children = (
+				E0873B2B202866C100813A75 /* MyServiceClassStaticResolver.swift */,
+				E00FC0791F4EC33800CC339A /* MyServiceClassFactory.swift */,
+				E00FC07B1F4EC33800CC339A /* MyServiceClassMetadataChanges.swift */,
+				E00FC07A1F4EC33800CC339A /* MyServiceClassMetadataParser.swift */,
+				E00FC07C1F4EC33800CC339A /* MyServiceClassMetadataText.swift */,
+			);
+			path = internal;
+			sourceTree = "<group>";
+		};
+		E00FC0601F4EC2F000CC339A /* public */ = {
+			isa = PBXGroup;
+			children = (
+				E00FC0631F4EC32B00CC339A /* MyPrefixCustomer.swift */,
+				E00FC0641F4EC32B00CC339A /* MyServiceClass.swift */,
+				E00FC06A1F4EC32B00CC339A /* MyServiceClassMetadata.swift */,
+				E00FC0621F4EC32B00CC339A /* MyPrefixProduct.swift */,
+				E00FC0691F4EC32B00CC339A /* MyPrefixProductCategory.swift */,
+				E00FC0651F4EC32B00CC339A /* MyPrefixProductText.swift */,
+				E00FC0661F4EC32B00CC339A /* MyPrefixPurchaseOrderHeader.swift */,
+				E00FC0611F4EC32B00CC339A /* MyPrefixPurchaseOrderItem.swift */,
+				E00FC0681F4EC32B00CC339A /* MyPrefixSalesOrderHeader.swift */,
+				E00FC06B1F4EC32B00CC339A /* MyPrefixSalesOrderItem.swift */,
+				E00FC06C1F4EC32B00CC339A /* MyPrefixStock.swift */,
+				E00FC0671F4EC32B00CC339A /* MyPrefixSupplier.swift */,
+			);
+			path = public;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		6C4C991C1DF19CCD004970FF /* Offline */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6C4C99451DF19CCD004970FF /* Build configuration list for PBXNativeTarget "Offline" */;
+			buildPhases = (
+				6C4C99191DF19CCD004970FF /* Sources */,
+				6C4C991A1DF19CCD004970FF /* Frameworks */,
+				6C4C991B1DF19CCD004970FF /* Resources */,
+				E0A61C8D1EBA12D2000D82BE /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Offline;
+			productName = Offline;
+			productReference = 6C4C991D1DF19CCD004970FF /* Offline.app */;
+			productType = "com.apple.product-type.application";
+		};
+		6C4C99301DF19CCD004970FF /* OfflineTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6C4C99481DF19CCD004970FF /* Build configuration list for PBXNativeTarget "OfflineTests" */;
+			buildPhases = (
+				6C4C992D1DF19CCD004970FF /* Sources */,
+				6C4C992E1DF19CCD004970FF /* Frameworks */,
+				6C4C992F1DF19CCD004970FF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6C4C99331DF19CCD004970FF /* PBXTargetDependency */,
+			);
+			name = OfflineTests;
+			productName = OfflineTests;
+			productReference = 6C4C99311DF19CCD004970FF /* OfflineTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		6C4C993B1DF19CCD004970FF /* OfflineUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6C4C994B1DF19CCD004970FF /* Build configuration list for PBXNativeTarget "OfflineUITests" */;
+			buildPhases = (
+				6C4C99381DF19CCD004970FF /* Sources */,
+				6C4C99391DF19CCD004970FF /* Frameworks */,
+				6C4C993A1DF19CCD004970FF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6C4C993E1DF19CCD004970FF /* PBXTargetDependency */,
+			);
+			name = OfflineUITests;
+			productName = OfflineUITests;
+			productReference = 6C4C993C1DF19CCD004970FF /* OfflineUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6C4C99151DF19CCD004970FF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0810;
+				LastUpgradeCheck = 0900;
+				ORGANIZATIONNAME = SAP;
+				TargetAttributes = {
+					6C4C991C1DF19CCD004970FF = {
+						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = H8QB58T8ZU;
+						LastSwiftMigration = 0810;
+						ProvisioningStyle = Automatic;
+					};
+					6C4C99301DF19CCD004970FF = {
+						CreatedOnToolsVersion = 8.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 6C4C991C1DF19CCD004970FF;
+					};
+					6C4C993B1DF19CCD004970FF = {
+						CreatedOnToolsVersion = 8.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 6C4C991C1DF19CCD004970FF;
+					};
+				};
+			};
+			buildConfigurationList = 6C4C99181DF19CCD004970FF /* Build configuration list for PBXProject "Offline" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 6C4C99141DF19CCD004970FF;
+			productRefGroup = 6C4C991E1DF19CCD004970FF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6C4C991C1DF19CCD004970FF /* Offline */,
+				6C4C99301DF19CCD004970FF /* OfflineTests */,
+				6C4C993B1DF19CCD004970FF /* OfflineUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		6C4C991B1DF19CCD004970FF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6C359BD11EAF7C2C007F34B6 /* Main.storyboard in Resources */,
+				6C4C99691DF19D45004970FF /* Assets.xcassets in Resources */,
+				6C08B8791E68670F003DFB69 /* sap.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6C4C992F1DF19CCD004970FF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6C4C993A1DF19CCD004970FF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6C4C99191DF19CCD004970FF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E0873B2C202866C100813A75 /* MyServiceClassStaticResolver.swift in Sources */,
+				E00FC0761F4EC32B00CC339A /* MyServiceClassMetadata.swift in Sources */,
+				E00FC0801F4EC33800CC339A /* MyServiceClassMetadataText.swift in Sources */,
+				6C4C996E1DF19D45004970FF /* ODataModel.swift in Sources */,
+				E00FC07E1F4EC33800CC339A /* MyServiceClassMetadataParser.swift in Sources */,
+				6CFA48E01E8934B000D36D9C /* ActivityIndicator.swift in Sources */,
+				E00FC0721F4EC32B00CC339A /* MyPrefixPurchaseOrderHeader.swift in Sources */,
+				6CF8D7001E8E843200049D1C /* Notifier.swift in Sources */,
+				E00FC0741F4EC32B00CC339A /* MyPrefixSalesOrderHeader.swift in Sources */,
+				6C08B87A1E68670F003DFB69 /* StartScreenViewController.swift in Sources */,
+				E00FC07D1F4EC33800CC339A /* MyServiceClassFactory.swift in Sources */,
+				E00FC06D1F4EC32B00CC339A /* MyPrefixPurchaseOrderItem.swift in Sources */,
+				E00FC06F1F4EC32B00CC339A /* MyPrefixCustomer.swift in Sources */,
+				E00FC0731F4EC32B00CC339A /* MyPrefixSupplier.swift in Sources */,
+				E00FC0711F4EC32B00CC339A /* MyPrefixProductText.swift in Sources */,
+				6C4C99681DF19D45004970FF /* AppDelegate.swift in Sources */,
+				E00FC0771F4EC32B00CC339A /* MyPrefixSalesOrderItem.swift in Sources */,
+				6C481B6D202AFC06005DFAB7 /* HomeViewViewController.swift in Sources */,
+				6C4030F41E5D7FF100FD6F8F /* DetailTableViewController.swift in Sources */,
+				6C4030F61E5D7FFB00FD6F8F /* EditableCell.swift in Sources */,
+				6C4C996A1DF19D45004970FF /* Authenticator.swift in Sources */,
+				E00FC0701F4EC32B00CC339A /* MyServiceClass.swift in Sources */,
+				E00FC07F1F4EC33800CC339A /* MyServiceClassMetadataChanges.swift in Sources */,
+				E00FC0781F4EC32B00CC339A /* MyPrefixStock.swift in Sources */,
+				E00FC06E1F4EC32B00CC339A /* MyPrefixProduct.swift in Sources */,
+				E00FC0751F4EC32B00CC339A /* MyPrefixProductCategory.swift in Sources */,
+				6C4030F21E5D7FF100FD6F8F /* SalesOrderViewController.swift in Sources */,
+				6C4C996C1DF19D45004970FF /* Constants.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6C4C992D1DF19CCD004970FF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6C4C99381DF19CCD004970FF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		6C4C99331DF19CCD004970FF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6C4C991C1DF19CCD004970FF /* Offline */;
+			targetProxy = 6C4C99321DF19CCD004970FF /* PBXContainerItemProxy */;
+		};
+		6C4C993E1DF19CCD004970FF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6C4C991C1DF19CCD004970FF /* Offline */;
+			targetProxy = 6C4C993D1DF19CCD004970FF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		6C4C99431DF19CCD004970FF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		6C4C99441DF19CCD004970FF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		6C4C99461DF19CCD004970FF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = H8QB58T8ZU;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Frameworks/Release-fat",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = Offline/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.sap.cp.sdk.ios.sampleapp.basic.offline;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+			};
+			name = Debug;
+		};
+		6C4C99471DF19CCD004970FF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = H8QB58T8ZU;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Frameworks/Release-fat",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = Offline/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.sap.cp.sdk.ios.sampleapp.basic.offline;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+			};
+			name = Release;
+		};
+		6C4C99491DF19CCD004970FF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = OfflineTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.sap.OfflineTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Offline.app/Offline";
+			};
+			name = Debug;
+		};
+		6C4C994A1DF19CCD004970FF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = OfflineTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.sap.OfflineTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Offline.app/Offline";
+			};
+			name = Release;
+		};
+		6C4C994C1DF19CCD004970FF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = OfflineUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.sap.OfflineUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = Offline;
+			};
+			name = Debug;
+		};
+		6C4C994D1DF19CCD004970FF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = OfflineUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.sap.OfflineUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = Offline;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6C4C99181DF19CCD004970FF /* Build configuration list for PBXProject "Offline" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6C4C99431DF19CCD004970FF /* Debug */,
+				6C4C99441DF19CCD004970FF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6C4C99451DF19CCD004970FF /* Build configuration list for PBXNativeTarget "Offline" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6C4C99461DF19CCD004970FF /* Debug */,
+				6C4C99471DF19CCD004970FF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6C4C99481DF19CCD004970FF /* Build configuration list for PBXNativeTarget "OfflineTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6C4C99491DF19CCD004970FF /* Debug */,
+				6C4C994A1DF19CCD004970FF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6C4C994B1DF19CCD004970FF /* Build configuration list for PBXNativeTarget "OfflineUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6C4C994C1DF19CCD004970FF /* Debug */,
+				6C4C994D1DF19CCD004970FF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 6C4C99151DF19CCD004970FF /* Project object */;
+}

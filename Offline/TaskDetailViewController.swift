@@ -85,19 +85,15 @@ class TaskDetailViewController: UIViewController, UITableViewDelegate, UITableVi
         return cell
     }
     
-    func tableView(_: UITableView, didSelectRowAt _: IndexPath) {
-
+    func tableView(_: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "partDetailSegue", sender: indexPath)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showPart" {
-            /// check email to implement this via sender
-//            let selectedRow = sender as! UITableViewCell
-//            let selectedIndexPath = SalesOrderTable.indexPath(for: selectedRow)!
-//            let order: MyPrefixProduct = products[selectedIndexPath.row]
-//            let itemViewControler = segue.destination as! SalesOrderItemViewController
-//            itemViewControler.initialize(oDataModel: oDataModel!)
-//            itemViewControler.loadSalesOrderItems(newItems: order)
+        if segue.identifier == "partDetailSegue", let indexPath = sender as? IndexPath {
+            let part = parts[indexPath.row]
+            let vc = segue.destination as! ProductDetailViewController
+            vc.load(part: part)
         }
     }
 

@@ -9,6 +9,9 @@ import SAPFoundation
 import UIKit
 import SAPFiori
 
+typealias Ticket = MyPrefixSalesOrderHeader
+typealias Part = MyPrefixProduct
+
 class SalesOrderViewController: UIViewController, URLSessionTaskDelegate, UITableViewDataSource, UITableViewDelegate {
 
     @IBAction func updateStatus(_ sender: Any) {
@@ -55,7 +58,7 @@ class SalesOrderViewController: UIViewController, URLSessionTaskDelegate, UITabl
             //        objectHeader.detailImageView.image = #imageLiteral(resourceName: "ProfilePic")
             
             objectHeader.headlineLabel.text = salesOrder.salesOrderID
-            objectHeader.subheadlineLabel.text = "\(salesOrder.grossAmount!.toString()) \(salesOrder.currencyCode)"
+            objectHeader.subheadlineLabel.text = "\(salesOrder.grossAmount!.toString()) \(salesOrder.currencyCode ?? "EUR")"
             //        objectHeader.tags = [FUITag(title: "Started"), FUITag(title: "PM01"), FUITag(title: "103-Repair")]
             objectHeader.bodyLabel.text = salesOrder.lifeCycleStatusName
             objectHeader.descriptionLabel.text = "this is the long text which descripes the issue if there is one"

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="u7d-Fz-NCi">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="u7d-Fz-NCi">
     <device id="ipad9_7" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -107,14 +107,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Vq4-gD-Yar">
-                                <rect key="frame" x="0.0" y="64" width="1004" height="655"/>
+                                <rect key="frame" x="0.0" y="64" width="1024" height="655"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PartCell" textLabel="j2Y-hh-GQa" detailTextLabel="9Tk-IT-s26" style="IBUITableViewCellStyleSubtitle" id="c56-gE-IEq">
-                                        <rect key="frame" x="0.0" y="28" width="1004" height="44"/>
+                                        <rect key="frame" x="0.0" y="28" width="1024" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="c56-gE-IEq" id="sm9-tr-mBm">
-                                            <rect key="frame" x="0.0" y="0.0" width="1004" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="1024" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="j2Y-hh-GQa">
@@ -143,10 +143,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Vq4-gD-Yar" secondAttribute="trailing" id="4m0-xV-Py2"/>
                             <constraint firstItem="Vq4-gD-Yar" firstAttribute="leading" secondItem="1rN-gM-9sW" secondAttribute="leading" id="DV6-Qr-bRg"/>
                             <constraint firstItem="ht8-zR-JcY" firstAttribute="top" secondItem="Vq4-gD-Yar" secondAttribute="bottom" id="Gny-0p-VsN"/>
                             <constraint firstItem="Vq4-gD-Yar" firstAttribute="top" secondItem="Uwc-ry-eAV" secondAttribute="bottom" id="OFv-Tu-d5I"/>
-                            <constraint firstItem="Vq4-gD-Yar" firstAttribute="trailing" secondItem="1rN-gM-9sW" secondAttribute="trailingMargin" id="tVW-ux-gBI"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Products" id="rPe-Tb-fsN"/>
@@ -499,7 +499,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="uBu-x6-V72">
-                                <rect key="frame" x="0.0" y="64" width="1004" height="655"/>
+                                <rect key="frame" x="0.0" y="64" width="1024" height="655"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <outlet property="dataSource" destination="hBx-Pz-lBX" id="nW4-RG-3lg"/>
@@ -511,8 +511,8 @@
                         <constraints>
                             <constraint firstItem="T0Z-HU-QxK" firstAttribute="top" secondItem="uBu-x6-V72" secondAttribute="bottom" id="77E-V2-vMh"/>
                             <constraint firstItem="uBu-x6-V72" firstAttribute="leading" secondItem="1UJ-is-UUr" secondAttribute="leading" id="8sf-Qh-vGA"/>
+                            <constraint firstAttribute="trailing" secondItem="uBu-x6-V72" secondAttribute="trailing" id="Qv1-0q-Vt7"/>
                             <constraint firstItem="uBu-x6-V72" firstAttribute="top" secondItem="9UK-h3-Z85" secondAttribute="bottom" id="aSg-Nu-phZ"/>
-                            <constraint firstItem="uBu-x6-V72" firstAttribute="trailing" secondItem="1UJ-is-UUr" secondAttribute="trailingMargin" id="zx8-SA-2oy"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item 2" id="J6E-hS-gv3"/>

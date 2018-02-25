@@ -64,6 +64,8 @@ class Part {
     let width: String
     let height: String
     
+    let entity: MyPrefixProduct
+    
     init(mapping: MyPrefixProduct) {
         partID = mapping.productID ?? "NA"
         name = mapping.name ?? "No name"
@@ -76,5 +78,7 @@ class Part {
         height = mapping.dimensionHeight?.toString() ?? "0"
         width = mapping.dimensionWidth?.toString() ?? "0"
         depth = mapping.dimensionDepth?.toString() ?? "0"
+        
+        entity = mapping
     }
 }

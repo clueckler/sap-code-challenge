@@ -42,10 +42,18 @@ class ProductListViewController: UIViewController, UITableViewDelegate, UITableV
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "PartCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: FUIObjectTableViewCell.reuseIdentifier,
+                                                 for: indexPath) as! FUIObjectTableViewCell
+        
         let singlePart = parts[indexPath.row]
-        cell.textLabel?.text = singlePart.partID
-        cell.detailTextLabel?.text = (singlePart.name + " - " + singlePart.categoryName)
+        
+        cell.headlineText = singlePart.partID
+        cell.subheadlineText = (singlePart.name + " - " + singlePart.categoryName)
+        cell.accessoryType = .disclosureIndicator
+        
+        oDataModel.offlineService.downloadMedia(entity: singlePart.entity) { (data, error) in
+            cell.detailImage = UIImage(data: data ?? Data())
+        }
         
         return cell
     }
@@ -55,6 +63,8 @@ class ProductListViewController: UIViewController, UITableViewDelegate, UITableV
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.tableView.register(FUIObjectTableViewCell.self, forCellReuseIdentifier: FUIObjectTableViewCell.reuseIdentifier)
+        
         self.title = "Products"
         oDataModel.loadAllParts { [weak self] (parts, error) in
             self?.parts = parts ?? []

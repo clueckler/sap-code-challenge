@@ -34,6 +34,7 @@ open class MyServiceClass<Provider: DataServiceProvider>: DataService<Provider> 
         catch let error {
             self.completionQueue.addOperation {
                 completionHandler(nil, error)
+                
             }
         }
         }

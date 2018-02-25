@@ -143,25 +143,25 @@ class ODataModel {
     ///
     /// - Returns: list of sales orders
     /// - Throws: error
-    func loadSalesOpenOrders(completionHandler: @escaping (_ result: [MyPrefixSalesOrderHeader]?, _ error: String?) -> Void) {
+    func loadOpenTasks(completionHandler: @escaping (_ result: [Task], _ error: String?) -> Void) {
         
         let query = DataQuery().orderBy(MyPrefixSalesOrderHeader.salesOrderID).expand(MyPrefixSalesOrderHeader.items).expand(MyPrefixSalesOrderHeader.customerDetails).filter(MyPrefixSalesOrderHeader.lifeCycleStatus.equal("N"))
         if isOfflineStoreOpened {
             /// the same query as it was set up for the online use can be fired against the initialised the offline Odata Service
             offlineService.fetchSalesOrderHeaders(matching: query) { salesOrders, error in
-                if let error = error {
-                    completionHandler(nil, "Loading Sales Orders failed \(error.localizedDescription)")
+                guard let salesOrders = salesOrders, error == nil else {
+                    completionHandler([], "Loading Sales Orders failed \(error?.localizedDescription ?? "")")
                     return
                 }
-                completionHandler(salesOrders!, nil)
+                completionHandler(salesOrders.map(Task.init), nil)
             }
         } else {
             espmOdataService.fetchSalesOrderHeaders(matching: query) { salesOrders, error in
-                if let error = error {
-                    completionHandler(nil, "Loading Sales Orders failed \(error.localizedDescription)")
+                guard let salesOrders = salesOrders, error == nil else {
+                    completionHandler([], "Loading Sales Orders failed \(error?.localizedDescription ?? "")")
                     return
                 }
-                completionHandler(salesOrders!, nil)
+                completionHandler(salesOrders.map(Task.init), nil)
             }
         }
     }

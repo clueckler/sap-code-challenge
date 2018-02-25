@@ -204,7 +204,6 @@
 				6C359BD01EAF7C2C007F34B6 /* Main.storyboard */,
 				6C4C99831DF19D65004970FF /* Model */,
 				6C4C99841DF19D89004970FF /* View */,
-				BB67F42C2042ED3000207174 /* DomainModel.swift */,
 			);
 			path = Offline;
 			sourceTree = "<group>";
@@ -220,6 +219,7 @@
 		6C4C99831DF19D65004970FF /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				BB67F42C2042ED3000207174 /* DomainModel.swift */,
 				6C4C99541DF19D45004970FF /* ODataModel.swift */,
 				6C4C99521DF19D45004970FF /* Constants.swift */,
 				6C4C99561DF19D45004970FF /* ProxyClasses */,

@@ -9,10 +9,11 @@
 import UIKit
 import SAPFiori
 
-class ProductListViewController: UIViewController {
+class ProductListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var tableView: UITableView!
-    
+    var parts: [Part] = []
+
     // MARK: Init
     
     required init?(coder aDecoder: NSCoder) {
@@ -31,6 +32,23 @@ class ProductListViewController: UIViewController {
                                        image: FUIIconLibrary.system.library.withRenderingMode(.alwaysTemplate),
                                        tag: 0)
     }
+
+    func numberOfSections(in _: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_: UITableView, numberOfRowsInSection _: Int) -> Int {
+        return parts.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "PartCell", for: indexPath)
+        let singlePart = parts[indexPath.row]
+        cell.textLabel?.text = singlePart.partID
+        cell.detailTextLabel?.text = (singlePart.name + " - " + singlePart.categoryName)
+        
+        return cell
+    }
     
     // MARK: View life cylce
     
@@ -38,7 +56,11 @@ class ProductListViewController: UIViewController {
         super.viewDidLoad()
 
         self.title = "Products"
-        
+        oDataModel.loadAllParts { [weak self] (parts, error) in
+            self?.parts = parts ?? []
+            self?.tableView.reloadData()
+        }
+
         // Do any additional setup after loading the view.
     }
 

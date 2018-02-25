@@ -17,6 +17,7 @@ extension CLLocationCoordinate2D {
 
 let firaBarcelonaGranVia = CLLocationCoordinate2D(latitude: 41.3544734, longitude: 2.1256795)
 private func randomizeLocation() -> CLLocationCoordinate2D {
+    
     let latitudeDelta = Double(arc4random_uniform(4001)) * 0.00001
     let longitudeDelta = Double(arc4random_uniform(5001)) * 0.00001
     return firaBarcelonaGranVia.translate(byLatitude: latitudeDelta, byLongitude: longitudeDelta)
